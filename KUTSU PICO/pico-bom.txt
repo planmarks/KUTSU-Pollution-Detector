@@ -1,0 +1,41 @@
+Components/Modules:
+1. Pimoroni Pico Lipo - 
+PIM560 - 
+https://www.mouser.ee/ProductDetail/397-PIM560
+https://pico.pinout.xyz/pimoroni-pico-lipo
+
+2. Air Quality Sensors Air Quality Sensors Fermion: SGP40 Air Quality Sensor (Breakout) - 
+SEN0392 - 
+https://www.mouser.ee/ProductDetail/426-SEN0392
+https://www.mouser.ee/datasheet/3/1500/1/518e5e0e1bfa8fdf441c96f0a3d093ad.pdf
+https://learn.adafruit.com/adafruit-sgp40/pinouts
+
+3. 0.96" I2C OLED Display - 
+CS-ANAVI-DISPLAY-1 - 
+https://www.mouser.ee/ProductDetail/392-CSANAVIDISPLAY1
+https://www.mouser.com/catalog/specsheets/Crowd%20Supply_01202021_ANAVI.pdf?_gl=1*1m8i3xm*_gcl_aw*R0NMLjE3ODI3MTc1NTEuQ2owS0NRandyNGpTQmhDU0FSSXNBT1gxRS1JSzRqdlNVT3Bsa0owREJrWnF1OVBCa29YSVIwUU55TXJOTzBneTJWaUJQcUtPWHNUQ0daUWFBdjlVRUFMd193Y0I.*_gcl_au*NzAyNjI1Mjg5LjE3ODI0NjMxMzAuMTMzNTE4NjgzOC4xNzgyNzMwNTYyLjE3ODI3MzA1NjE.*_ga*MTU0OTgyODUzMi4xNzc0NjAwODky*_ga_15W4STQT4T*czE3ODI4MDc3NjgkbzQ0JGcxJHQxNzgyODA4MDI5JGoyMSRsMCRoMA..
+https://controllerstech.com/arduino-ssd1306-oled-display-tutorial/
+
+4. Development Tools HTU21D-F Temp & Humidity Sensor B/O - 
+1899 - 
+https://www.mouser.ee/ProductDetail/485-1899
+https://www.mouser.ee/datasheet/3/1348/1/adafruit-htu21d-f-temperature-humidity-sensor.pdf
+https://learn.adafruit.com/adafruit-htu21d-f-temperature-humidity-sensor/pinouts
+
+5. Buzzer 12 mm x 6.8 mm deep, P, 3 V, 78 dB, Through Hole, Audio Transducer - 
+CPT-1206-3TH-T - 
+https://www.mouser.ee/ProductDetail/179-CPT-1206-3TH-T
+https://www.mouser.ee/datasheet/3/6118/1/cpt_1206_3th_t.pdf
+
+6. NFC I2C NTAG MODULE - 
+NFC-NTAG - 
+https://www.mouser.ee/ProductDetail/570-NFC-NTAG
+
+7. Adafruit Micro SD SPI or SDIO Card Breakout Board - 3V - 
+4682 - 
+https://www.mouser.ee/ProductDetail/485-4682
+https://learn.adafruit.com/adafruit-microsd-spi-sdio/pinouts
+
+8. CCS811 Air Quality Sensor (TVOC & eCO2)
+
+9. MQ-2 Air Quality Sensor (LPG, Propane, Butane, Methane, Hydrogen, Alcohol, Smoke)

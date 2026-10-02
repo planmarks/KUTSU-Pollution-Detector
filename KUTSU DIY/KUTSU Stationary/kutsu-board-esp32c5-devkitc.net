@@ -1,0 +1,6018 @@
+(export
+	(version "E")
+	(design
+		(source "C:\\Users\\planm\\Pictures\\Projects\\Hardware\\Gear\\Kutsu Sense\\ESP32C5-DevKitC-V0-3A\\kutsu-board-esp32c5-devkitc.kicad_sch")
+		(date "2026-08-21T15:09:21")
+		(tool "Eeschema 10.0.5")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title "Kutsu Sense Board ESP32C5")
+				(company)
+				(rev "2")
+				(date)
+				(source "kutsu-board-esp32c5-devkitc.kicad_sch")
+				(comment
+					(number "1")
+					(value "")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "BZ1")
+			(value "Buzzer")
+			(footprint "Buzzer_Beeper:MagneticBuzzer_PUI_SMT-1028-T-2-R")
+			(description "Buzzer, polarized")
+			(fields
+				(field
+					(name "Footprint") "Buzzer_Beeper:MagneticBuzzer_PUI_SMT-1028-T-2-R")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Buzzer, polarized")
+			)
+			(libsource
+				(lib "Device")
+				(part "Buzzer")
+				(description "Buzzer, polarized")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "quartz resonator ceramic")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "*Buzzer*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "dc94d729-5655-49ad-b606-d1e9bfec94d3")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C1")
+			(value "10uF")
+			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(description "Unpolarized capacitor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1b27a173-e23d-4cbd-960a-da3d382a8d60")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C2")
+			(value "0.1uF")
+			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(description "Unpolarized capacitor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f040f0b1-3555-4251-ba45-da09e2297913")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C3")
+			(value "0.1uF")
+			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(description "Unpolarized capacitor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "dc59ee2c-710b-492c-bee1-3fa60ad14adc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C4")
+			(value "0.1uF")
+			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(description "Unpolarized capacitor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "2db47ac7-355c-4f8b-bba9-c0ad8b69728d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C5")
+			(value "0.1uF")
+			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(description "Unpolarized capacitor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7e6807f3-ea5b-4b5a-a860-d751fc2ebb1c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C6")
+			(value "0.1uF")
+			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(description "Unpolarized capacitor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ec2c7387-95b4-4420-a096-3bb388af903d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C7")
+			(value "0.1uF")
+			(footprint "Capacitor_SMD:C_0805_2012Metric")
+			(description "Unpolarized capacitor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "227d0ca8-5fd7-4177-a394-4c4fb87165f8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D1")
+			(value "LED")
+			(footprint "LED_SMD:LED_2010_5025Metric")
+			(description "Light emitting diode")
+			(fields
+				(field
+					(name "Sim.Pins") "1=K 2=A")
+				(field
+					(name "Footprint") "LED_SMD:LED_2010_5025Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Light emitting diode")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sim.Pins")
+				(value "1=K 2=A")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "80fe792a-958a-4e6f-bb65-d1cfe0f0d493")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D2")
+			(value "LED")
+			(footprint "LED_SMD:LED_2010_5025Metric")
+			(description "Light emitting diode")
+			(fields
+				(field
+					(name "Sim.Pins") "1=K 2=A")
+				(field
+					(name "Footprint") "LED_SMD:LED_2010_5025Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Light emitting diode")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sim.Pins")
+				(value "1=K 2=A")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8d125059-e5fa-400e-8278-a414595a534d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D3")
+			(value "LED")
+			(footprint "LED_SMD:LED_2010_5025Metric")
+			(description "Light emitting diode")
+			(fields
+				(field
+					(name "Sim.Pins") "1=K 2=A")
+				(field
+					(name "Footprint") "LED_SMD:LED_2010_5025Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Light emitting diode")
+			)
+			(libsource
+				(lib "Device")
+				(part "LED")
+				(description "Light emitting diode")
+			)
+			(property
+				(name "Sim.Pins")
+				(value "1=K 2=A")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "LED diode")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "LED* LED_SMD:* LED_THT:*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d925c39d-14dc-4ece-9463-3dca64862cf9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H1")
+			(value "3V")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "b3e1928f-b0a5-45fd-8cef-898290acbafa")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H2")
+			(value "AO")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "b59e4b15-306b-4c3a-b99b-6015eaad0dab")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H3")
+			(value "GND")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d80e3e24-7b50-4c6f-9568-1b1cc929f3be")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H4")
+			(value "DO")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "95423175-02dd-47b9-a312-e1217bf50fc1")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H5")
+			(value "CLK")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7961061b-b20b-4f05-b1f9-31c01e71226a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H6")
+			(value "VCC")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8b283c4e-0ffc-4613-9435-629598d0eba7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H7")
+			(value "SO")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "ec0caac9-7960-48d6-a650-8c6c21b1987a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H8")
+			(value "GND")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9ae698fa-d274-4202-bf54-3bcd1823418b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H9")
+			(value "SI")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c07b4241-4d14-4c19-86d7-b6c8764813b0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H10")
+			(value "CS")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "2fdb2746-6d4a-4947-acde-1d72e362b9c4")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H11")
+			(value "D1")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d633882b-307d-4cbf-984c-c97a9e53c5c9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H12")
+			(value "DAT2")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f4a39c8b-c3b6-4a39-9972-eae8624b6ccc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H13")
+			(value "DET")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "a7790bc6-e2c2-4be8-8d60-cdeef5f39dc9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H14")
+			(value "VIN")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "45aa0280-2120-4223-a0a8-613578fb7ef9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H15")
+			(value "VIN")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "2ff106a6-1066-4993-9f01-0c2975d18442")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H16")
+			(value "GND")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "96535d48-0914-4ae5-a2cb-20e218215b76")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H17")
+			(value "3V3")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "a34a6f14-c21b-405b-b7bd-3badd8118b70")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H18")
+			(value "SCL")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d3f5765e-005d-4236-9720-3cee12cdc07f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H19")
+			(value "GND")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "56aa293c-4356-47dd-9a87-59d65d889a19")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H20")
+			(value "SDA")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "821d46e2-c343-478f-8495-559d5f980c23")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H21")
+			(value "SDA")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "4a28a7e8-19da-457d-bff8-e4facfac8608")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H22")
+			(value "WAK")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "e620a6eb-edff-47bf-8ac3-db2e1ad21792")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H23")
+			(value "SCL")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9aa77907-7ec5-4bd2-8462-abbe83f56d10")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H24")
+			(value "INT")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "834ac8b7-03e2-4f4c-8da7-f4c0c93012e3")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H25")
+			(value "RST")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9e9e94b4-3d0f-4f7f-9c01-fb9b4d69bb07")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H26")
+			(value "ADD")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9770908f-9702-48dc-9c92-66993a29e54f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H27")
+			(value "3V")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7d50098d-2f81-44c6-b7ca-7d69547f3d88")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H28")
+			(value "GND")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7040b0d7-8f9d-4a0d-823a-1bce8ad74e26")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H29")
+			(value "CLK")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "97807223-63d3-4c57-a4a0-c3d441d9765f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H30")
+			(value "SO")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c6ae3153-69ee-497b-9c46-88d0ce8c5af7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H31")
+			(value "SI")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "64ccc537-fc65-4a3a-be95-34c90ba4dddc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H32")
+			(value "CS")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "8c241a02-df67-4f76-9653-57c02e4462a8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H33")
+			(value "D1")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "2482769a-fca8-4eae-b458-1840014a1dd0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H34")
+			(value "DAT2")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c5158796-11df-4356-8c3a-6784e6a083a9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "H35")
+			(value "DET")
+			(footprint "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+			(description "Mounting Hole with connection as pad named MP")
+			(fields
+				(field
+					(name "Footprint") "Connector_PinHeader_1.00mm:PinHeader_1x01_P1.00mm_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(libsource
+				(lib "Mechanical")
+				(part "MountingHole_Pad_MP")
+				(description "Mounting Hole with connection as pad named MP")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "exclude_from_bom")
+			)
+			(property
+				(name "ki_keywords")
+				(value "mounting hole")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "MountingHole*Pad*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "b22cf5d9-b9b1-4886-ac94-fd891a9ba7d3")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "MP")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J2")
+			(value "MSD-11-A")
+			(footprint "MSD-11-A:CUI_MSD-11-A")
+			(description "Micro SD Card Connector, 8 Positions, Connector and Ejector, Push In, Auto Eject Out, Surface Mount, 1.85 mm Heaight Above Board, Gold Flash")
+			(fields
+				(field
+					(name "MF") "Same Sky")
+				(field
+					(name "MAXIMUM_PACKAGE_HEIGHT") "2.05mm")
+				(field
+					(name "Package") "None")
+				(field
+					(name "Price") "None")
+				(field
+					(name "Check_prices") "https://www.snapeda.com/parts/MSD-11-A/Same+Sky/view-part/?ref=eda")
+				(field
+					(name "STANDARD") "Manufacturer Recommendations")
+				(field
+					(name "PARTREV") "1.02")
+				(field
+					(name "SnapEDA_Link") "https://www.snapeda.com/parts/MSD-11-A/Same+Sky/view-part/?ref=snap")
+				(field
+					(name "MP") "MSD-11-A")
+				(field
+					(name "Purchase-URL") "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=15691536&manufacturer=Same Sky&part_name=MSD-11-A&search_term=msd-11-a")
+				(field
+					(name "Availability") "In Stock")
+				(field
+					(name "MANUFACTURER") "CUI Devices")
+				(field
+					(name "Footprint") "MSD-11-A:CUI_MSD-11-A")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Micro SD Card Connector, 8 Positions, Connector and Ejector, Push In, Auto Eject Out, Surface Mount, 1.85 mm Heaight Above Board, Gold Flash")
+			)
+			(libsource
+				(lib "MSD-11-A")
+				(part "MSD-11-A")
+				(description "Micro SD Card Connector, 8 Positions, Connector and Ejector, Push In, Auto Eject Out, Surface Mount, 1.85 mm Heaight Above Board, Gold Flash")
+			)
+			(property
+				(name "MF")
+				(value "Same Sky")
+			)
+			(property
+				(name "MAXIMUM_PACKAGE_HEIGHT")
+				(value "2.05mm")
+			)
+			(property
+				(name "Package")
+				(value "None")
+			)
+			(property
+				(name "Price")
+				(value "None")
+			)
+			(property
+				(name "Check_prices")
+				(value "https://www.snapeda.com/parts/MSD-11-A/Same+Sky/view-part/?ref=eda")
+			)
+			(property
+				(name "STANDARD")
+				(value "Manufacturer Recommendations")
+			)
+			(property
+				(name "PARTREV")
+				(value "1.02")
+			)
+			(property
+				(name "SnapEDA_Link")
+				(value "https://www.snapeda.com/parts/MSD-11-A/Same+Sky/view-part/?ref=snap")
+			)
+			(property
+				(name "MP")
+				(value "MSD-11-A")
+			)
+			(property
+				(name "Purchase-URL")
+				(value "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=15691536&manufacturer=Same Sky&part_name=MSD-11-A&search_term=msd-11-a")
+			)
+			(property
+				(name "Availability")
+				(value "In Stock")
+			)
+			(property
+				(name "MANUFACTURER")
+				(value "CUI Devices")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "64eb1e01-d821-4aa7-b9fb-c19c1077d63a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "P4")
+						)
+						(pin
+							(num "P5")
+						)
+						(pin
+							(num "P3")
+						)
+						(pin
+							(num "P7")
+						)
+						(pin
+							(num "P8")
+						)
+						(pin
+							(num "P1")
+						)
+						(pin
+							(num "P2")
+						)
+						(pin
+							(num "WP")
+						)
+						(pin
+							(num "CD")
+						)
+						(pin
+							(num "P6")
+						)
+						(pin
+							(num "G1")
+						)
+						(pin
+							(num "G2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R1")
+			(value "20K")
+			(footprint "Resistor_SMD:R_0805_2012Metric")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "6e82f98a-48c6-46c9-858c-78449d8f2bee")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R2")
+			(value "10K")
+			(footprint "Resistor_SMD:R_0805_2012Metric")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "4cabc59c-b048-485d-8433-a00b569156f6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R3")
+			(value "4.7K")
+			(footprint "Resistor_SMD:R_0805_2012Metric")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "71b71460-b13e-4692-ad5d-36b09ee26d76")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R4")
+			(value "4.7K")
+			(footprint "Resistor_SMD:R_0805_2012Metric")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "26a11aa3-4b48-4502-8c5c-c38cb4418cb7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R5")
+			(value "4.7K")
+			(footprint "Resistor_SMD:R_0805_2012Metric")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "80e89ac2-7788-45b7-be99-702d7b98bfdd")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R6")
+			(value "4.7K")
+			(footprint "Resistor_SMD:R_0805_2012Metric")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "744a24ae-dec3-4ed8-9e9e-284bd84bb045")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R7")
+			(value "4.7K")
+			(footprint "Resistor_SMD:R_0805_2012Metric")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "a6f2b5f3-48bd-4310-a38c-e8d3f2acbee9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R8")
+			(value "4.7K")
+			(footprint "Resistor_SMD:R_0805_2012Metric")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "9cb5c010-44d1-41af-a6c2-6354dd26e0ae")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R9")
+			(value "4.7K")
+			(footprint "Resistor_SMD:R_0805_2012Metric")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "dfc8fad6-5ab7-4a4f-91f7-b488c2ac5e5b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R10")
+			(value "4.7K")
+			(footprint "Resistor_SMD:R_0805_2012Metric")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "bfa92d6f-dc74-420a-a8dd-d417be080d57")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R11")
+			(value "4.7K")
+			(footprint "Resistor_SMD:R_0805_2012Metric")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "0713ff44-aad1-4412-b689-2389f671eacd")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R13")
+			(value "4.7K")
+			(footprint "Resistor_SMD:R_0805_2012Metric")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "cabdd5e7-a222-4124-a220-7fdbdfb934e7")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R14")
+			(value "4.7K")
+			(footprint "Resistor_SMD:R_0805_2012Metric")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "a2a1c07b-20ec-4d71-a8d5-9ebdc8434c0b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R15")
+			(value "4.7K")
+			(footprint "Resistor_SMD:R_0805_2012Metric")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "69e20682-7bc1-45cb-82f7-77ec543f0374")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U1")
+			(value "DM-OLED096-636")
+			(footprint "Ext KiCad Libs:MODULE_DM-OLED096-636")
+			(description "0.96” 128 X 64 MONOCHROME GRAPHIC OLED DISPLAY MODULE - I2C")
+			(fields
+				(field
+					(name "MF") "Display Module")
+				(field
+					(name "MAXIMUM_PACKAGE_HEIGHT") "11.3 mm")
+				(field
+					(name "Package") "Package")
+				(field
+					(name "Price") "None")
+				(field
+					(name "Check_prices") "https://www.snapeda.com/parts/DM-OLED096-636/Display+Module/view-part/?ref=eda")
+				(field
+					(name "STANDARD") "Manufacturer Recommendations")
+				(field
+					(name "PARTREV") "2018-09-10")
+				(field
+					(name "SnapEDA_Link") "https://www.snapeda.com/parts/DM-OLED096-636/Display+Module/view-part/?ref=snap")
+				(field
+					(name "MP") "DM-OLED096-636")
+				(field
+					(name "Availability") "Not in stock")
+				(field
+					(name "MANUFACTURER") "Displaymodule")
+				(field
+					(name "Footprint") "Ext KiCad Libs:MODULE_DM-OLED096-636")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "0.96” 128 X 64 MONOCHROME GRAPHIC OLED DISPLAY MODULE - I2C")
+			)
+			(libsource
+				(lib "DM-OLED096-636")
+				(part "DM-OLED096-636")
+				(description "0.96” 128 X 64 MONOCHROME GRAPHIC OLED DISPLAY MODULE - I2C")
+			)
+			(property
+				(name "MF")
+				(value "Display Module")
+			)
+			(property
+				(name "MAXIMUM_PACKAGE_HEIGHT")
+				(value "11.3 mm")
+			)
+			(property
+				(name "Package")
+				(value "Package")
+			)
+			(property
+				(name "Price")
+				(value "None")
+			)
+			(property
+				(name "Check_prices")
+				(value "https://www.snapeda.com/parts/DM-OLED096-636/Display+Module/view-part/?ref=eda")
+			)
+			(property
+				(name "STANDARD")
+				(value "Manufacturer Recommendations")
+			)
+			(property
+				(name "PARTREV")
+				(value "2018-09-10")
+			)
+			(property
+				(name "SnapEDA_Link")
+				(value "https://www.snapeda.com/parts/DM-OLED096-636/Display+Module/view-part/?ref=snap")
+			)
+			(property
+				(name "MP")
+				(value "DM-OLED096-636")
+			)
+			(property
+				(name "Availability")
+				(value "Not in stock")
+			)
+			(property
+				(name "MANUFACTURER")
+				(value "Displaymodule")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "a7cbaa93-b572-4123-84e4-c37dadf5c4b0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "1")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U2")
+			(value "ESP32-C5-DevKitC-1")
+			(footprint "Seeed_Studio_XIAO_Series:XIAO-ESP32-C3-SMD")
+			(datasheet "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c5/esp32-c5-devkitc-1/user_guide.html")
+			(fields
+				(field
+					(name "Footprint") "Seeed_Studio_XIAO_Series:XIAO-ESP32-C3-SMD")
+				(field
+					(name "Datasheet") "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c5/esp32-c5-devkitc-1/user_guide.html")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Espressif")
+				(part "ESP32-C5-DevKitC-1")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "578c5194-502b-495e-afb2-e8e0a9f01deb")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "32")
+						)
+						(pin
+							(num "31")
+						)
+						(pin
+							(num "30")
+						)
+						(pin
+							(num "29")
+						)
+						(pin
+							(num "28")
+						)
+						(pin
+							(num "27")
+						)
+						(pin
+							(num "26")
+						)
+						(pin
+							(num "25")
+						)
+						(pin
+							(num "24")
+						)
+						(pin
+							(num "23")
+						)
+						(pin
+							(num "22")
+						)
+						(pin
+							(num "21")
+						)
+						(pin
+							(num "20")
+						)
+						(pin
+							(num "19")
+						)
+						(pin
+							(num "18")
+						)
+						(pin
+							(num "17")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U3")
+			(value "SCD41-D-R2")
+			(footprint "QFN20_SCD41-D-R2_SEN")
+			(datasheet "SCD41-D-R2")
+			(fields
+				(field
+					(name "Footprint") "QFN20_SCD41-D-R2_SEN")
+				(field
+					(name "Datasheet") "SCD41-D-R2")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "SCD41-D-R2")
+				(part "SCD41-D-R2")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "SCD41-D-R2")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "QFN20_SCD41-D-R2_SEN")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "4024420f-23c3-4283-8376-fe4690040e5d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "21")
+						)
+						(pin
+							(num "20")
+						)
+						(pin
+							(num "19")
+						)
+						(pin
+							(num "18")
+						)
+						(pin
+							(num "17")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "11")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U4")
+			(value "SHT40-AD1B-R3")
+			(footprint "DFN4_SHT4x_SEN")
+			(datasheet "SHT40-AD1B-R3")
+			(fields
+				(field
+					(name "Footprint") "DFN4_SHT4x_SEN")
+				(field
+					(name "Datasheet") "SHT40-AD1B-R3")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "SHT40-AD1B-R3")
+				(part "SHT40-AD1B-R3")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "SHT40-AD1B-R3")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DFN4_SHT4x_SEN DFN4_SHT4x_SEN-M DFN4_SHT4x_SEN-L")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "85bff4a4-72c0-4e9b-b00c-77cdecd9b59b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "3")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U5")
+			(value "SGP41-D-R4")
+			(footprint "DFN_SGP41-D-R4_SEN")
+			(datasheet "SGP41-D-R4")
+			(fields
+				(field
+					(name "Footprint") "DFN_SGP41-D-R4_SEN")
+				(field
+					(name "Datasheet") "SGP41-D-R4")
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "SGP41-D-R4")
+				(part "SGP41-D-R4")
+				(description "")
+			)
+			(property
+				(name "Sheetname")
+				(value "kutsu-board-esp32c5-devkitc")
+			)
+			(property
+				(name "Sheetfile")
+				(value "kutsu-board-esp32c5-devkitc.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "SGP41-D-R4")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DFN_SGP41-D-R4_SEN DFN_SGP41-D-R4_SEN-M DFN_SGP41-D-R4_SEN-L")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "f42e744b-009c-415b-aa13-bc0b3d2f5466")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "DM-OLED096-636")
+			(part "DM-OLED096-636")
+			(description "0.96” 128 X 64 MONOCHROME GRAPHIC OLED DISPLAY MODULE - I2C")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "DM-OLED096-636")
+				(field
+					(name "Footprint") "DM-OLED096-636:MODULE_DM-OLED096-636")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "0.96” 128 X 64 MONOCHROME GRAPHIC OLED DISPLAY MODULE - I2C")
+				(field
+					(name "MF") "Display Module")
+				(field
+					(name "MAXIMUM_PACKAGE_HEIGHT") "11.3 mm")
+				(field
+					(name "Package") "Package")
+				(field
+					(name "Price") "None")
+				(field
+					(name "Check_prices") "https://www.snapeda.com/parts/DM-OLED096-636/Display+Module/view-part/?ref=eda")
+				(field
+					(name "STANDARD") "Manufacturer Recommendations")
+				(field
+					(name "PARTREV") "2018-09-10")
+				(field
+					(name "SnapEDA_Link") "https://www.snapeda.com/parts/DM-OLED096-636/Display+Module/view-part/?ref=snap")
+				(field
+					(name "MP") "DM-OLED096-636")
+				(field
+					(name "Availability") "Not in stock")
+				(field
+					(name "MANUFACTURER") "Displaymodule")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "VCC_IN")
+					(type "power_in")
+				)
+				(pin
+					(num "3")
+					(name "SCL")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "SDA")
+					(type "bidirectional")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "Buzzer")
+			(description "Buzzer, polarized")
+			(footprints
+				(fp "*Buzzer*")
+			)
+			(fields
+				(field
+					(name "Reference") "BZ")
+				(field
+					(name "Value") "Buzzer")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Buzzer, polarized")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "+")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "-")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "C_Small")
+			(description "Unpolarized capacitor, small symbol")
+			(footprints
+				(fp "C_*")
+			)
+			(fields
+				(field
+					(name "Reference") "C")
+				(field
+					(name "Value") "C_Small")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor, small symbol")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "LED")
+			(description "Light emitting diode")
+			(footprints
+				(fp "LED*")
+				(fp "LED_SMD:*")
+				(fp "LED_THT:*")
+			)
+			(fields
+				(field
+					(name "Reference") "D")
+				(field
+					(name "Value") "LED")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Light emitting diode")
+				(field
+					(name "Sim.Pins") "1=K 2=A")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "K")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "A")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Device")
+			(part "R_Small")
+			(description "Resistor, small symbol")
+			(footprints
+				(fp "R_*")
+			)
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "R_Small")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Espressif")
+			(part "ESP32-C5-DevKitC-1")
+			(docs "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c5/esp32-c5-devkitc-1/user_guide.html")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "ESP32-C5-DevKitC-1")
+				(field
+					(name "Footprint") "PCM_Espressif:ESP32-C5-DevKitC-1")
+				(field
+					(name "Datasheet") "https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32c5/esp32-c5-devkitc-1/user_guide.html")
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "3V3")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "EN/RESET")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "GPIO2/MTMS")
+					(type "bidirectional")
+				)
+				(pin
+					(num "4")
+					(name "GPIO3/MTDI")
+					(type "bidirectional")
+				)
+				(pin
+					(num "5")
+					(name "GPIO4/MTCK")
+					(type "bidirectional")
+				)
+				(pin
+					(num "6")
+					(name "GPIO5/MTDO")
+					(type "bidirectional")
+				)
+				(pin
+					(num "7")
+					(name "GPIO0")
+					(type "bidirectional")
+				)
+				(pin
+					(num "8")
+					(name "GPIO1")
+					(type "bidirectional")
+				)
+				(pin
+					(num "9")
+					(name "GPIO27")
+					(type "bidirectional")
+				)
+				(pin
+					(num "10")
+					(name "GPIO6")
+					(type "bidirectional")
+				)
+				(pin
+					(num "11")
+					(name "GPIO7")
+					(type "bidirectional")
+				)
+				(pin
+					(num "12")
+					(name "GPIO26")
+					(type "bidirectional")
+				)
+				(pin
+					(num "13")
+					(name "GPIO25")
+					(type "bidirectional")
+				)
+				(pin
+					(num "14")
+					(name "5V")
+					(type "power_in")
+				)
+				(pin
+					(num "15")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "16")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "17")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "18")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "19")
+					(name "GPIO13/USB_D-")
+					(type "bidirectional")
+				)
+				(pin
+					(num "20")
+					(name "GPIO14/USB_D+")
+					(type "bidirectional")
+				)
+				(pin
+					(num "21")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "22")
+					(name "GPIO28")
+					(type "bidirectional")
+				)
+				(pin
+					(num "23")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "24")
+					(name "GPIO8")
+					(type "bidirectional")
+				)
+				(pin
+					(num "25")
+					(name "GPIO9")
+					(type "bidirectional")
+				)
+				(pin
+					(num "26")
+					(name "GPIO10")
+					(type "bidirectional")
+				)
+				(pin
+					(num "27")
+					(name "GPIO15")
+					(type "bidirectional")
+				)
+				(pin
+					(num "28")
+					(name "GPIO23")
+					(type "bidirectional")
+				)
+				(pin
+					(num "29")
+					(name "GPIO24")
+					(type "bidirectional")
+				)
+				(pin
+					(num "30")
+					(name "GPIO12/U0RXD")
+					(type "bidirectional")
+				)
+				(pin
+					(num "31")
+					(name "GPIO11/U0TXD")
+					(type "bidirectional")
+				)
+				(pin
+					(num "32")
+					(name "GND")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "MSD-11-A")
+			(part "MSD-11-A")
+			(description "Micro SD Card Connector, 8 Positions, Connector and Ejector, Push In, Auto Eject Out, Surface Mount, 1.85 mm Heaight Above Board, Gold Flash")
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "MSD-11-A")
+				(field
+					(name "Footprint") "MSD-11-A:CUI_MSD-11-A")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Micro SD Card Connector, 8 Positions, Connector and Ejector, Push In, Auto Eject Out, Surface Mount, 1.85 mm Heaight Above Board, Gold Flash")
+				(field
+					(name "MF") "Same Sky")
+				(field
+					(name "MAXIMUM_PACKAGE_HEIGHT") "2.05mm")
+				(field
+					(name "Package") "None")
+				(field
+					(name "Price") "None")
+				(field
+					(name "Check_prices") "https://www.snapeda.com/parts/MSD-11-A/Same+Sky/view-part/?ref=eda")
+				(field
+					(name "STANDARD") "Manufacturer Recommendations")
+				(field
+					(name "PARTREV") "1.02")
+				(field
+					(name "SnapEDA_Link") "https://www.snapeda.com/parts/MSD-11-A/Same+Sky/view-part/?ref=snap")
+				(field
+					(name "MP") "MSD-11-A")
+				(field
+					(name "Purchase-URL") "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=15691536&manufacturer=Same Sky&part_name=MSD-11-A&search_term=msd-11-a")
+				(field
+					(name "Availability") "In Stock")
+				(field
+					(name "MANUFACTURER") "CUI Devices")
+			)
+			(pins
+				(pin
+					(num "CD")
+					(name "CD")
+					(type "passive")
+				)
+				(pin
+					(num "G1")
+					(name "COVER_GND")
+					(type "power_in")
+				)
+				(pin
+					(num "G2")
+					(name "COVER_GND")
+					(type "power_in")
+				)
+				(pin
+					(num "P1")
+					(name "DAT2")
+					(type "bidirectional")
+				)
+				(pin
+					(num "P2")
+					(name "CD/DAT3")
+					(type "bidirectional")
+				)
+				(pin
+					(num "P3")
+					(name "CMD")
+					(type "bidirectional")
+				)
+				(pin
+					(num "P4")
+					(name "VDD")
+					(type "power_in")
+				)
+				(pin
+					(num "P5")
+					(name "CLK")
+					(type "input")
+				)
+				(pin
+					(num "P6")
+					(name "VSS")
+					(type "power_in")
+				)
+				(pin
+					(num "P7")
+					(name "DAT0")
+					(type "bidirectional")
+				)
+				(pin
+					(num "P8")
+					(name "DAT1")
+					(type "bidirectional")
+				)
+				(pin
+					(num "WP")
+					(name "WP")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Mechanical")
+			(part "MountingHole_Pad_MP")
+			(description "Mounting Hole with connection as pad named MP")
+			(footprints
+				(fp "MountingHole*Pad*")
+			)
+			(fields
+				(field
+					(name "Reference") "H")
+				(field
+					(name "Value") "MountingHole_Pad_MP")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Mounting Hole with connection as pad named MP")
+			)
+			(pins
+				(pin
+					(num "MP")
+					(name "MP")
+					(type "input")
+				)
+			)
+		)
+		(libpart
+			(lib "SCD41-D-R2")
+			(part "SCD41-D-R2")
+			(docs "SCD41-D-R2")
+			(footprints
+				(fp "QFN20_SCD41-D-R2_SEN")
+			)
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "SCD41-D-R2")
+				(field
+					(name "Footprint") "QFN20_SCD41-D-R2_SEN")
+				(field
+					(name "Datasheet") "SCD41-D-R2")
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "2")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "3")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "4")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "5")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "6")
+					(name "GND")
+					(type "power_out")
+				)
+				(pin
+					(num "7")
+					(name "VDD")
+					(type "power_in")
+				)
+				(pin
+					(num "8")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "9")
+					(name "SCL")
+					(type "unspecified")
+				)
+				(pin
+					(num "10")
+					(name "SDA")
+					(type "bidirectional")
+				)
+				(pin
+					(num "11")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "12")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "13")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "14")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "15")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "16")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "17")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "18")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "19")
+					(name "VDDH")
+					(type "power_in")
+				)
+				(pin
+					(num "20")
+					(name "GND")
+					(type "power_out")
+				)
+				(pin
+					(num "21")
+					(name "EPAD")
+					(type "power_out")
+				)
+			)
+		)
+		(libpart
+			(lib "SGP41-D-R4")
+			(part "SGP41-D-R4")
+			(docs "SGP41-D-R4")
+			(footprints
+				(fp "DFN_SGP41-D-R4_SEN")
+				(fp "DFN_SGP41-D-R4_SEN-M")
+				(fp "DFN_SGP41-D-R4_SEN-L")
+			)
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "SGP41-D-R4")
+				(field
+					(name "Footprint") "DFN_SGP41-D-R4_SEN")
+				(field
+					(name "Datasheet") "SGP41-D-R4")
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "VDD")
+					(type "power_in")
+				)
+				(pin
+					(num "2")
+					(name "VSS")
+					(type "power_out")
+				)
+				(pin
+					(num "3")
+					(name "SDA")
+					(type "bidirectional")
+				)
+				(pin
+					(num "4")
+					(name "GND")
+					(type "power_out")
+				)
+				(pin
+					(num "5")
+					(name "VDDH")
+					(type "power_in")
+				)
+				(pin
+					(num "6")
+					(name "SCL")
+					(type "bidirectional")
+				)
+				(pin
+					(num "7")
+					(name "GND")
+					(type "power_out")
+				)
+			)
+		)
+		(libpart
+			(lib "SHT40-AD1B-R3")
+			(part "SHT40-AD1B-R3")
+			(docs "SHT40-AD1B-R3")
+			(footprints
+				(fp "DFN4_SHT4x_SEN")
+				(fp "DFN4_SHT4x_SEN-M")
+				(fp "DFN4_SHT4x_SEN-L")
+			)
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "SHT40-AD1B-R3")
+				(field
+					(name "Footprint") "DFN4_SHT4x_SEN")
+				(field
+					(name "Datasheet") "SHT40-AD1B-R3")
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "SDA")
+					(type "bidirectional")
+				)
+				(pin
+					(num "2")
+					(name "SCL")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "VDD")
+					(type "power_in")
+				)
+				(pin
+					(num "4")
+					(name "VSS")
+					(type "power_out")
+				)
+				(pin
+					(num "5")
+					(name "EPAD")
+					(type "no_connect")
+				)
+			)
+		)
+	)
+	(libraries
+		(library
+			(logical "DM-OLED096-636")
+			(uri "C:/Users/planm/Pictures/KiCad Ext Libraries/096_OLED_Display/DM-OLED096-636.kicad_sym")
+		)
+		(library
+			(logical "Device")
+			(uri "${KICAD10_SYMBOL_DIR}/Device.kicad_sym")
+		)
+		(library
+			(logical "Espressif")
+			(uri "C:/Users/planm/Pictures/KiCad Ext Libraries/espressif-kicad-addon/symbols/Espressif.kicad_sym")
+		)
+		(library
+			(logical "MSD-11-A")
+			(uri "C:/Users/planm/Pictures/KiCad Ext Libraries/MSD-11-A/MSD-11-A.kicad_sym")
+		)
+		(library
+			(logical "Mechanical")
+			(uri "${KICAD10_SYMBOL_DIR}/Mechanical.kicad_sym")
+		)
+		(library
+			(logical "SCD41-D-R2")
+			(uri "C:/Users/planm/Pictures/KiCad Ext Libraries/SCD41-D-R2/2026-08-21_11-20-03.kicad_sym")
+		)
+		(library
+			(logical "SGP41-D-R4")
+			(uri "C:/Users/planm/Pictures/KiCad Ext Libraries/SGP41-D-R4/2026-08-21_11-21-36.kicad_sym")
+		)
+		(library
+			(logical "SHT40-AD1B-R3")
+			(uri "C:/Users/planm/Pictures/KiCad Ext Libraries/SHT40-AD1B-R3/2026-08-21_11-22-51.kicad_sym")
+		)
+	)
+	(nets
+		(net
+			(code "1")
+			(name "+3V3")
+			(class "Default")
+			(node
+				(ref "C1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C3")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C4")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C5")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C6")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C7")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "H1")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H14")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H15")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H27")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "J2")
+				(pin "P4")
+				(pinfunction "VDD_P4")
+				(pintype "power_in")
+			)
+			(node
+				(ref "R10")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R11")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R13")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R14")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R15")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R6")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R7")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R8")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R9")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "2")
+				(pinfunction "VCC_IN_2")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U2")
+				(pin "1")
+				(pinfunction "3V3_1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U3")
+				(pin "19")
+				(pinfunction "VDDH_19")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U3")
+				(pin "7")
+				(pinfunction "VDD_7")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U4")
+				(pin "3")
+				(pinfunction "VDD_3")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U5")
+				(pin "1")
+				(pinfunction "VDD_1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U5")
+				(pin "5")
+				(pinfunction "VDDH_5")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "2")
+			(name "5V")
+			(class "Default")
+			(node
+				(ref "H6")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "U2")
+				(pin "14")
+				(pinfunction "5V_14")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "3")
+			(name "EN{slash}RESET")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "2")
+				(pinfunction "EN/RESET_2")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "4")
+			(name "GND")
+			(class "Default")
+			(node
+				(ref "BZ1")
+				(pin "2")
+				(pinfunction "-_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C3")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C4")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C5")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C6")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C7")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D1")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D2")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D3")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "H16")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H19")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H22")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H26")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H28")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H3")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H8")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "J2")
+				(pin "G1")
+				(pinfunction "COVER_GND_G1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "J2")
+				(pin "G2")
+				(pinfunction "COVER_GND_G2")
+				(pintype "power_in")
+			)
+			(node
+				(ref "J2")
+				(pin "P6")
+				(pinfunction "VSS_P6")
+				(pintype "power_in")
+			)
+			(node
+				(ref "R1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "1")
+				(pinfunction "GND_1")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U2")
+				(pin "15")
+				(pinfunction "GND_15")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U2")
+				(pin "18")
+				(pinfunction "GND_18")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U2")
+				(pin "21")
+				(pinfunction "GND_21")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U2")
+				(pin "32")
+				(pinfunction "GND_32")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U3")
+				(pin "20")
+				(pinfunction "GND_20")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U3")
+				(pin "21")
+				(pinfunction "EPAD_21")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U3")
+				(pin "6")
+				(pinfunction "GND_6")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U4")
+				(pin "4")
+				(pinfunction "VSS_4")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U5")
+				(pin "2")
+				(pinfunction "VSS_2")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U5")
+				(pin "4")
+				(pinfunction "GND_4")
+				(pintype "power_out")
+			)
+			(node
+				(ref "U5")
+				(pin "7")
+				(pinfunction "GND_7")
+				(pintype "power_out")
+			)
+		)
+		(net
+			(code "5")
+			(name "GPIO0RED")
+			(class "Default")
+			(node
+				(ref "R3")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "7")
+				(pinfunction "GPIO0_7")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "6")
+			(name "GPIO1")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "8")
+				(pinfunction "GPIO1_8")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "7")
+			(name "GPIO2{slash}MTMS")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "3")
+				(pinfunction "GPIO2/MTMS_3")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "8")
+			(name "GPIO4")
+			(class "Default")
+			(node
+				(ref "BZ1")
+				(pin "1")
+				(pinfunction "+_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "5")
+				(pinfunction "GPIO4/MTCK_5")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "9")
+			(name "GPIO5GREEN")
+			(class "Default")
+			(node
+				(ref "R4")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "6")
+				(pinfunction "GPIO5/MTDO_6")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "10")
+			(name "GPIO7")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "11")
+				(pinfunction "GPIO7_11")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "11")
+			(name "GPIO11{slash}U0TXD")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "31")
+				(pinfunction "GPIO11/U0TXD_31")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "12")
+			(name "GPIO12{slash}U0RXD")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "30")
+				(pinfunction "GPIO12/U0RXD_30")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "13")
+			(name "GPIO13{slash}USB_D-")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "19")
+				(pinfunction "GPIO13/USB_D-_19")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "14")
+			(name "GPIO14{slash}USB_D+")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "20")
+				(pinfunction "GPIO14/USB_D+_20")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "15")
+			(name "GPIO15")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "27")
+				(pinfunction "GPIO15_27")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "16")
+			(name "GPIO25")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "13")
+				(pinfunction "GPIO25_13")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "17")
+			(name "GPIO26YELLOW")
+			(class "Default")
+			(node
+				(ref "R5")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "12")
+				(pinfunction "GPIO26_12")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "18")
+			(name "GPIO27")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "9")
+				(pinfunction "GPIO27_9")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "19")
+			(name "GPIO28")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "22")
+				(pinfunction "GPIO28_22")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "20")
+			(name "MQ2AO")
+			(class "Default")
+			(node
+				(ref "R1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "4")
+				(pinfunction "GPIO3/MTDI_4")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "21")
+			(name "Net-(D1-A)")
+			(class "Default")
+			(node
+				(ref "D1")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R3")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "22")
+			(name "Net-(D2-A)")
+			(class "Default")
+			(node
+				(ref "D2")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "23")
+			(name "Net-(D3-A)")
+			(class "Default")
+			(node
+				(ref "D3")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R5")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "24")
+			(name "Net-(H2-PadMP)")
+			(class "Default")
+			(node
+				(ref "H2")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "R2")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "25")
+			(name "Net-(J2-DAT1)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "P8")
+				(pinfunction "DAT1_P8")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "R11")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "26")
+			(name "Net-(J2-DAT2)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "P1")
+				(pinfunction "DAT2_P1")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "R13")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "27")
+			(name "Net-(J2-PadCD)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "CD")
+				(pinfunction "CD_CD")
+				(pintype "passive")
+			)
+			(node
+				(ref "R15")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "28")
+			(name "SCL")
+			(class "Default")
+			(node
+				(ref "H18")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H23")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "R7")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "3")
+				(pinfunction "SCL_3")
+				(pintype "input")
+			)
+			(node
+				(ref "U2")
+				(pin "24")
+				(pinfunction "GPIO8_24")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U3")
+				(pin "9")
+				(pinfunction "SCL_9")
+				(pintype "unspecified")
+			)
+			(node
+				(ref "U4")
+				(pin "2")
+				(pinfunction "SCL_2")
+				(pintype "input")
+			)
+			(node
+				(ref "U5")
+				(pin "6")
+				(pinfunction "SCL_6")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "29")
+			(name "SDA")
+			(class "Default")
+			(node
+				(ref "H20")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H21")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "R6")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U1")
+				(pin "4")
+				(pinfunction "SDA_4")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U2")
+				(pin "10")
+				(pinfunction "GPIO6_10")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U3")
+				(pin "10")
+				(pinfunction "SDA_10")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U4")
+				(pin "1")
+				(pinfunction "SDA_1")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "U5")
+				(pin "3")
+				(pinfunction "SDA_3")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "30")
+			(name "SDCLK")
+			(class "Default")
+			(node
+				(ref "H29")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H5")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "J2")
+				(pin "P5")
+				(pinfunction "CLK_P5")
+				(pintype "input")
+			)
+			(node
+				(ref "R8")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "28")
+				(pinfunction "GPIO23_28")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "31")
+			(name "SDCS")
+			(class "Default")
+			(node
+				(ref "H10")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H32")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "J2")
+				(pin "P2")
+				(pinfunction "CD/DAT3_P2")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "R14")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "26")
+				(pinfunction "GPIO10_26")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "32")
+			(name "SDSI")
+			(class "Default")
+			(node
+				(ref "H31")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H9")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "J2")
+				(pin "P3")
+				(pinfunction "CMD_P3")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "R9")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "25")
+				(pinfunction "GPIO9_25")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "33")
+			(name "SDSO")
+			(class "Default")
+			(node
+				(ref "H30")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "H7")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input")
+			)
+			(node
+				(ref "J2")
+				(pin "P7")
+				(pinfunction "DAT0_P7")
+				(pintype "bidirectional")
+			)
+			(node
+				(ref "R10")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U2")
+				(pin "29")
+				(pinfunction "GPIO24_29")
+				(pintype "bidirectional")
+			)
+		)
+		(net
+			(code "34")
+			(name "unconnected-(H4-PadMP)")
+			(class "Default")
+			(node
+				(ref "H4")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "35")
+			(name "unconnected-(H11-PadMP)")
+			(class "Default")
+			(node
+				(ref "H11")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "36")
+			(name "unconnected-(H12-PadMP)")
+			(class "Default")
+			(node
+				(ref "H12")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "37")
+			(name "unconnected-(H13-PadMP)")
+			(class "Default")
+			(node
+				(ref "H13")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "38")
+			(name "unconnected-(H17-PadMP)")
+			(class "Default")
+			(node
+				(ref "H17")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "39")
+			(name "unconnected-(H24-PadMP)")
+			(class "Default")
+			(node
+				(ref "H24")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "40")
+			(name "unconnected-(H25-PadMP)")
+			(class "Default")
+			(node
+				(ref "H25")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "41")
+			(name "unconnected-(H33-PadMP)")
+			(class "Default")
+			(node
+				(ref "H33")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "42")
+			(name "unconnected-(H34-PadMP)")
+			(class "Default")
+			(node
+				(ref "H34")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "43")
+			(name "unconnected-(H35-PadMP)")
+			(class "Default")
+			(node
+				(ref "H35")
+				(pin "MP")
+				(pinfunction "MP_MP")
+				(pintype "input+no_connect")
+			)
+		)
+		(net
+			(code "44")
+			(name "unconnected-(J2-PadWP)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "WP")
+				(pinfunction "WP_WP")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "45")
+			(name "unconnected-(U2-NC-Pad16)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "16")
+				(pinfunction "NC_16")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "46")
+			(name "unconnected-(U2-NC-Pad17)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "17")
+				(pinfunction "NC_17")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "47")
+			(name "unconnected-(U2-NC-Pad23)")
+			(class "Default")
+			(node
+				(ref "U2")
+				(pin "23")
+				(pinfunction "NC_23")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "48")
+			(name "unconnected-(U3-NC-Pad1)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "1")
+				(pinfunction "NC_1")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "49")
+			(name "unconnected-(U3-NC-Pad2)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "2")
+				(pinfunction "NC_2")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "50")
+			(name "unconnected-(U3-NC-Pad3)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "3")
+				(pinfunction "NC_3")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "51")
+			(name "unconnected-(U3-NC-Pad4)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "4")
+				(pinfunction "NC_4")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "52")
+			(name "unconnected-(U3-NC-Pad5)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "5")
+				(pinfunction "NC_5")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "53")
+			(name "unconnected-(U3-NC-Pad8)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "8")
+				(pinfunction "NC_8")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "54")
+			(name "unconnected-(U3-NC-Pad11)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "11")
+				(pinfunction "NC_11")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "55")
+			(name "unconnected-(U3-NC-Pad12)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "12")
+				(pinfunction "NC_12")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "56")
+			(name "unconnected-(U3-NC-Pad13)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "13")
+				(pinfunction "NC_13")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "57")
+			(name "unconnected-(U3-NC-Pad14)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "14")
+				(pinfunction "NC_14")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "58")
+			(name "unconnected-(U3-NC-Pad15)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "15")
+				(pinfunction "NC_15")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "59")
+			(name "unconnected-(U3-NC-Pad16)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "16")
+				(pinfunction "NC_16")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "60")
+			(name "unconnected-(U3-NC-Pad17)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "17")
+				(pinfunction "NC_17")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "61")
+			(name "unconnected-(U3-NC-Pad18)")
+			(class "Default")
+			(node
+				(ref "U3")
+				(pin "18")
+				(pinfunction "NC_18")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "62")
+			(name "unconnected-(U4-EPAD-Pad5)")
+			(class "Default")
+			(node
+				(ref "U4")
+				(pin "5")
+				(pinfunction "EPAD_5")
+				(pintype "no_connect")
+			)
+		)
+	)
+)
