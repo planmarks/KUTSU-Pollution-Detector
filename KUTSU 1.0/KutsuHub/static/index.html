@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KUTSU Hub</title>
+<style>
+:root{--bg:#0b0e13;--pan:#131821;--pan2:#18202b;--edge:#253041;--tx:#e8eef6;--mut:#8b97a7;
+--ok:#22c55e;--warn:#eab308;--alert:#ef4444;--acc:#5b9dff;--band:rgba(91,157,255,.16)}
+@media (prefers-color-scheme: light){:root{--bg:#f4f6f9;--pan:#fff;--pan2:#f7f9fc;--edge:#dde3eb;--tx:#16202c;
+--mut:#5f6b7a;--acc:#2563eb;--band:rgba(37,99,235,.12)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+header{display:flex;align-items:center;gap:18px;padding:14px 22px;border-bottom:1px solid var(--edge);background:var(--pan);position:sticky;top:0;z-index:5}
+.brand{font-weight:700;font-size:18px;letter-spacing:.3px}.brand span{color:var(--acc)}
+.hstat{color:var(--mut);font-size:13px}.hstat b{color:var(--tx)}
+header .sp{flex:1}
+.clock{font-variant-numeric:tabular-nums;color:var(--mut)}
+button,.btn{background:var(--pan2);color:var(--tx);border:1px solid var(--edge);border-radius:8px;padding:6px 12px;font:inherit;cursor:pointer}
+button:hover,.btn:hover{border-color:var(--acc);text-decoration:none}
+button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+button.danger:hover{border-color:var(--alert);color:var(--alert)}
+main{max-width:1500px;margin:0 auto;padding:18px 22px 40px}
+.layout{display:grid;grid-template-columns:1fr 340px;gap:22px}
+@media(max-width:1000px){.layout{grid-template-columns:1fr}}
+h2{font-size:15px;font-weight:600;margin:0 0 10px;color:var(--mut);text-transform:uppercase;letter-spacing:.6px}
+.room{margin-bottom:22px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.card{background:var(--pan);border:1px solid var(--edge);border-radius:12px;padding:14px;cursor:pointer;transition:border-color .12s}
+.card:hover{border-color:var(--acc)}
+.card.s1{box-shadow:inset 4px 0 0 var(--warn)}.card.s2{box-shadow:inset 4px 0 0 var(--alert)}
+.card.off{opacity:.55}
+.ch{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.ch .nm{font-weight:600;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ch .sp{flex:1}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);flex:none}.dot.off{background:var(--mut)}
+.badge{font-size:10.5px;font-weight:700;letter-spacing:.4px;padding:2px 8px;border-radius:20px;flex:none}
+.b0{background:rgba(34,197,94,.14);color:var(--ok)}.b1{background:rgba(234,179,8,.16);color:var(--warn)}.b2{background:rgba(239,68,68,.16);color:var(--alert)}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.tile{background:var(--pan2);border:1px solid var(--edge);border-radius:9px;padding:7px 9px}
+.tile .l{color:var(--mut);font-size:11.5px}
+.tile .v{font-size:18px;font-weight:650;font-variant-numeric:tabular-nums}
+.tile .v small{font-size:11px;font-weight:500;color:var(--mut);margin-left:3px}
+.s1 .v,.v.s1{color:var(--warn)}.s2 .v,.v.s2{color:var(--alert)}
+canvas.spark{width:100%;height:22px;display:block;margin-top:3px}
+.foot{display:flex;justify-content:space-between;color:var(--mut);font-size:12px;margin-top:9px}
+.panel{background:var(--pan);border:1px solid var(--edge);border-radius:12px;padding:14px;margin-bottom:18px}
+.ev{display:flex;gap:8px;padding:6px 0;border-bottom:1px solid var(--edge);font-size:13px}
+.ev:last-child{border-bottom:0}
+.ev time{margin-left:auto;color:var(--mut);font-size:11.5px;flex:none;white-space:nowrap}
+.ev.alert{color:var(--alert)}.ev.warning{color:var(--warn)}.ev.cleared{color:var(--ok)}
+.events{max-height:520px;overflow:auto}
+.kv{display:flex;justify-content:space-between;padding:3px 0;font-size:13px}.kv span{color:var(--mut)}
+.empty{color:var(--mut);padding:18px 4px}
+.empty code{background:var(--pan2);padding:1px 5px;border-radius:4px}
+/* device view */
+.dhead{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:6px}
+.dhead h1{font-size:24px;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 16px}
+.chip{background:var(--pan2);border:1px solid var(--edge);border-radius:20px;padding:3px 10px;font-size:12.5px;color:var(--mut)}
+.chip b{color:var(--tx);font-weight:600}
+.now{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:18px}
+.ranges{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:14px}
+.ranges .sp{flex:1}
+.charts{display:grid;grid-template-columns:repeat(auto-fill,minmax(440px,1fr));gap:16px}
+@media(max-width:520px){.charts{grid-template-columns:1fr}}
+.chart{background:var(--pan);border:1px solid var(--edge);border-radius:12px;padding:12px 14px;position:relative}
+.chart .t{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.chart .t b{font-size:14px}.chart .t span{color:var(--mut);font-size:12px;font-variant-numeric:tabular-nums}
+.chart canvas{width:100%;height:170px;display:block}
+.tip{position:absolute;pointer-events:none;background:var(--pan2);border:1px solid var(--edge);border-radius:7px;padding:4px 8px;font-size:12px;white-space:nowrap;display:none;z-index:2}
+.note{color:var(--mut);font-size:12.5px}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">KUTSU <span>Hub</span></div>
+  <div class="hstat" id="hstat">connecting…</div>
+  <div class="sp"></div>
+  <a class="btn" id="exportAll" href="#" title="All devices, last 24 h">Export 24 h CSV</a>
+  <div class="clock" id="clock">--:--</div>
+</header>
+<main id="main"></main>
+<script>
+"use strict";
+const M = {co2:["CO₂","ppm"],eco2:["eCO₂","ppm"],tvoc:["TVOC","ppb"],voc:["VOC index",""],nox:["NOx index",""],
+           temp:["Temperature","°C"],hum:["Humidity","%RH"],gas:["Gas (MQ-2)","raw"]};
+const ORDER = Object.keys(M);
+const SEVW = ["OK","WARNING","ALERT"];
+const RANGES = [["1 h",3600],["6 h",21600],["24 h",86400],["7 d",604800],["30 d",2592000]];
+let devices = [], events = [], health = null, sparks = {}, sparkAt = {};
+let view = {mac:null, range:3600, hist:null, histAt:0};
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pad = n => (n<10?"0":"")+n;
+function fmtV(k,v){ if(v==null) return "—"; return (k==="temp"||k==="hum") ? (+v).toFixed(1) : Math.round(v); }
+function fmtAge(s){ if(s==null) return "never"; if(s<60) return s+" s ago"; if(s<3600) return Math.floor(s/60)+" min ago";
+  if(s<86400) return Math.floor(s/3600)+" h ago"; return Math.floor(s/86400)+" d ago"; }
+function fmtT(ts,span){ const d=new Date(ts*1000);
+  return span>172800 ? pad(d.getDate())+"."+pad(d.getMonth()+1)+" "+pad(d.getHours())+"h"
+                     : pad(d.getHours())+":"+pad(d.getMinutes()); }
+function fmtFull(ts){ const d=new Date(ts*1000);
+  return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())+" "+pad(d.getHours())+":"+pad(d.getMinutes())+":"+pad(d.getSeconds()); }
+function fmtBytes(b){ return b>1e9?(b/1e9).toFixed(1)+" GB":b>1e6?(b/1e6).toFixed(1)+" MB":Math.round(b/1e3)+" kB"; }
+function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+function keysOf(d){ const r=d.last||{}; const ks=ORDER.filter(k=>k in r); return ks.length?ks:(d.metrics||[]); }
+async function api(path,opt){ const r=await fetch(path,opt); if(!r.ok) throw new Error(r.status); return r.json(); }
+
+// ---- polling --------------------------------------------------------------
+async function poll(){
+  try{
+    [devices, events, health] = await Promise.all([api("/api/devices"), api("/api/events?limit=60"), api("/api/health")]);
+    const on = devices.filter(d=>d.online).length;
+    $("#hstat").innerHTML = "<b>"+on+"</b> online · <b>"+devices.length+"</b> device"+(devices.length===1?"":"s")+
+      " · "+health.samples.toLocaleString()+" samples";
+  }catch(e){ $("#hstat").textContent = "hub unreachable — retrying…"; }
+  render();
+}
+async function refreshSparks(){
+  const now = Date.now()/1000;
+  for(const d of devices){
+    if(sparkAt[d.mac] && now-sparkAt[d.mac] < 20) continue;
+    sparkAt[d.mac] = now;
+    try{ sparks[d.mac] = await api("/api/history?mac="+encodeURIComponent(d.mac)+"&from="+Math.floor(now-3600)+"&points=60"); }
+    catch(e){}
+  }
+  if(!view.mac) drawSparks();
+}
+
+// ---- routing --------------------------------------------------------------
+function route(){
+  const m = location.hash.match(/^#\/d\/(.+)$/);
+  const mac = m ? decodeURIComponent(m[1]) : null;
+  if(mac !== view.mac){ view.mac = mac; view.hist = null; view.histAt = 0; }
+  render();
+  if(mac) loadHistory();
+}
+window.addEventListener("hashchange", route);
+
+function render(){ if(view.mac) renderDevice(); else renderOverview(); }
+
+// ---- overview -------------------------------------------------------------
+function renderOverview(){
+  const byRoom = {};
+  devices.forEach(d=>{ (byRoom[d.room||"Unassigned"] = byRoom[d.room||"Unassigned"]||[]).push(d); });
+  const rooms = Object.keys(byRoom).sort((a,b)=>a==="Unassigned"?1:b==="Unassigned"?-1:a.localeCompare(b));
+  let left = "";
+  if(!devices.length){
+    left = '<div class="panel empty">No devices yet. On each KUTSU unit: set <b>mode → stationary</b> and join this Wi-Fi network '+
+      '(Kutsu Setup app, or USB serial: <code>mode stationary</code>, <code>ssid …</code>, <code>pass …</code>, <code>connect</code>). '+
+      'Units find this hub automatically within a few seconds. If your network blocks broadcasts, point them at it with '+
+      '<code>hub '+esc(location.hostname)+':'+esc(location.port||80)+'</code>.</div>';
+  }
+  rooms.forEach(room=>{
+    left += '<section class="room"><h2>'+esc(room)+'</h2><div class="cards">'+byRoom[room].map(card).join("")+'</div></section>';
+  });
+  const evs = events.length ? events.map(evRow).join("") : '<div class="empty">No events yet.</div>';
+  const h = health ? '<div class="kv"><span>Database</span><b>'+fmtBytes(health.db_bytes)+'</b></div>'+
+    '<div class="kv"><span>Samples stored</span><b>'+health.samples.toLocaleString()+'</b></div>'+
+    '<div class="kv"><span>Hub uptime</span><b>'+fmtAge(health.uptime).replace(" ago","")+'</b></div>'+
+    '<div class="kv"><span>Hub version</span><b>'+esc(health.hub)+'</b></div>' : "";
+  $("#main").innerHTML = '<div class="layout"><div>'+left+'</div><aside>'+
+    '<h2>Alerts &amp; events</h2><div class="panel events">'+evs+'</div>'+
+    '<h2>Hub</h2><div class="panel">'+h+'</div></aside></div>';
+  document.querySelectorAll(".card").forEach(el=>el.onclick=()=>{ location.hash="#/d/"+encodeURIComponent(el.dataset.mac); });
+  drawSparks();
+}
+function card(d){
+  const r = d.last||{}, s = d.online ? (r.sev||0) : 0;
+  let h = '<div class="card s'+s+(d.online?"":" off")+'" data-mac="'+esc(d.mac)+'">';
+  h += '<div class="ch"><span class="dot'+(d.online?"":" off")+'"></span><span class="nm">'+esc(d.name)+'</span><span class="sp"></span>'+
+       (d.online?'<span class="badge b'+s+'">'+SEVW[s]+'</span>':'<span class="badge">OFFLINE</span>')+'</div>';
+  h += '<div class="tiles">';
+  keysOf(d).forEach(k=>{ const sk=r["s_"+k]||0;
+    h += '<div class="tile s'+sk+'"><div class="l">'+M[k][0]+'</div><div class="v">'+fmtV(k,r[k])+'<small>'+M[k][1]+'</small></div>'+
+         '<canvas class="spark" data-mac="'+esc(d.mac)+'" data-m="'+k+'"></canvas></div>'; });
+  h += '</div><div class="foot"><span>'+esc(d.hw||"")+'</span><span>'+(d.online?"updated "+fmtAge(d.age):"last seen "+fmtAge(d.age))+'</span></div></div>';
+  return h;
+}
+function evRow(e){
+  const d = devices.find(x=>x.mac===e.mac);
+  return '<div class="ev '+esc(e.level)+'">'+esc(e.text)+'<time title="'+fmtFull(e.ts)+'">'+fmtAge(Math.max(0,Math.floor(Date.now()/1000)-e.ts))+'</time></div>';
+}
+function drawSparks(){
+  document.querySelectorAll("canvas.spark").forEach(cv=>{
+    const h = sparks[cv.dataset.mac]; if(!h || !h.avg[cv.dataset.m]) return;
+    lineChart(cv, h.t, h.avg[cv.dataset.m], null, null, {spark:true, bucket:h.bucket});
+  });
+}
+
+// ---- device view ----------------------------------------------------------
+async function loadHistory(){
+  if(!view.mac) return;
+  const now = Math.floor(Date.now()/1000);
+  try{ view.hist = await api("/api/history?mac="+encodeURIComponent(view.mac)+"&from="+(now-view.range)+"&to="+now+"&points=500"); }
+  catch(e){ view.hist = null; }
+  view.histAt = now;
+  renderDevice();
+}
+function renderDevice(){
+  const d = devices.find(x=>x.mac===view.mac);
+  if(!d){ $("#main").innerHTML = '<p><a href="#/">← All devices</a></p><div class="panel empty">Device not found (yet).</div>'; return; }
+  const r = d.last||{}, s = d.online?(r.sev||0):0, h = view.hist;
+  let html = '<p><a href="#/">← All devices</a></p><div class="dhead"><span class="dot'+(d.online?"":" off")+'"></span><h1>'+esc(d.name)+'</h1>'+
+    (d.online?'<span class="badge b'+s+'">'+SEVW[s]+'</span>':'<span class="badge">OFFLINE</span>')+
+    '<span style="flex:1"></span><button id="edit">Rename / room</button><button class="danger" id="forget">Forget</button></div>';
+  html += '<div class="chips"><span class="chip">Room <b>'+esc(d.room||"—")+'</b></span><span class="chip">Hardware <b>'+esc(d.hw||"—")+'</b></span>'+
+    '<span class="chip">MAC <b>'+esc(d.mac)+'</b></span><span class="chip">IP <b>'+esc(d.ip||"—")+'</b></span>'+
+    '<span class="chip">'+(d.online?'<b>live</b> · updated '+fmtAge(d.age):'last seen <b>'+fmtAge(d.age)+'</b>')+'</span>'+
+    '<span class="chip">First seen <b>'+(d.first_seen?fmtFull(d.first_seen).slice(0,10):"—")+'</b></span>'+
+    '<span class="chip"><b>'+d.samples.toLocaleString()+'</b> samples</span></div>';
+  html += '<div class="now">'+keysOf(d).map(k=>{ const sk=r["s_"+k]||0;
+    return '<div class="tile s'+sk+'"><div class="l">'+M[k][0]+'</div><div class="v">'+fmtV(k,r[k])+'<small>'+M[k][1]+'</small></div></div>'; }).join("")+'</div>';
+  html += '<div class="ranges">'+RANGES.map(([l,sec])=>'<button data-r="'+sec+'" class="'+(sec===view.range?"on":"")+'">'+l+'</button>').join("")+
+    '<span class="sp"></span><a class="btn" id="csv" href="#">Export this range (CSV)</a></div>';
+  if(!h) html += '<div class="panel empty">Loading history…</div>';
+  else if(!h.metrics.length) html += '<div class="panel empty">No stored samples in this range yet.</div>';
+  else{
+    html += '<div class="charts">'+h.metrics.map(k=>{ const st=h.stats[k];
+      return '<div class="chart"><div class="t"><b>'+M[k][0]+(M[k][1]?' <span>('+M[k][1]+')</span>':"")+'</b>'+
+        '<span>min '+fmtV(k,st.min)+' · avg '+fmtV(k,st.avg)+' · max '+fmtV(k,st.max)+'</span></div>'+
+        '<canvas data-m="'+k+'"></canvas><div class="tip"></div></div>'; }).join("")+'</div>';
+    html += '<p class="note">'+h.count.toLocaleString()+' samples · each point = '+fmtSpan(h.bucket)+' average; the shaded band shows min–max.</p>';
+  }
+  const evs = events.filter(e=>e.mac===d.mac);
+  html += '<h2 style="margin-top:22px">Events</h2><div class="panel events">'+(evs.length?evs.map(evRow).join(""):'<div class="empty">No events.</div>')+'</div>';
+  $("#main").innerHTML = html;
+
+  document.querySelectorAll(".ranges button").forEach(b=>b.onclick=()=>{ view.range=+b.dataset.r; view.hist=null; renderDevice(); loadHistory(); });
+  const now = Math.floor(Date.now()/1000);
+  $("#csv").href = "/api/export.csv?mac="+encodeURIComponent(d.mac)+"&from="+(now-view.range)+"&to="+now;
+  $("#edit").onclick = async ()=>{
+    const label = prompt("Display name on this hub (empty = use the device's own name "+d.device_name+"):", d.label);
+    if(label===null) return;
+    const room = prompt("Room (empty = use the device's own room"+(d.device_room?" \""+d.device_room+"\"":"")+"):", d.room_override);
+    if(room===null) return;
+    await fetch("/api/devices/"+encodeURIComponent(d.mac),{method:"POST",body:JSON.stringify({label,room})});
+    poll();
+  };
+  $("#forget").onclick = async ()=>{
+    if(!confirm("Forget "+d.name+"? This deletes all its stored history on this hub. If it is still running it will re-appear as a new device.")) return;
+    await fetch("/api/devices/"+encodeURIComponent(d.mac),{method:"DELETE"});
+    location.hash = "#/";
+  };
+  if(h) document.querySelectorAll(".chart canvas").forEach(cv=>{
+    const k = cv.dataset.m, tip = cv.parentNode.querySelector(".tip");
+    const draw = hi => lineChart(cv, h.t, h.avg[k], h.min[k], h.max[k], {bucket:h.bucket, span:view.range, hi});
+    draw(-1);
+    cv.onmousemove = ev=>{
+      const rc = cv.getBoundingClientRect(), x = ev.clientX-rc.left;
+      const i = cv._idx ? cv._idx(x) : -1; if(i<0){ tip.style.display="none"; return; }
+      draw(i);
+      tip.innerHTML = fmtFull(h.t[i])+"<br><b>"+fmtV(k,h.avg[k][i])+" "+M[k][1]+"</b>"+
+        (h.min[k][i]!=null && h.min[k][i]!==h.max[k][i] ? ' <span style="color:var(--mut)">('+fmtV(k,h.min[k][i])+"–"+fmtV(k,h.max[k][i])+")</span>" : "");
+      tip.style.display="block";
+      tip.style.left = Math.min(x+14, rc.width-tip.offsetWidth)+"px"; tip.style.top = "40px";
+    };
+    cv.onmouseleave = ()=>{ tip.style.display="none"; draw(-1); };
+  });
+}
+function fmtSpan(s){ return s<60?s+" s":s<3600?Math.round(s/60)+" min":(s/3600).toFixed(s%3600?1:0)+" h"; }
+
+// ---- canvas line chart (avg line + min/max band, gaps on missing data) ----
+function lineChart(cv, t, avg, mn, mx, o){
+  const dpr = window.devicePixelRatio||1, W = cv.clientWidth, H = cv.clientHeight;
+  if(!W||!H) return;
+  cv.width = W*dpr; cv.height = H*dpr;
+  const x = cv.getContext("2d"); x.setTransform(dpr,0,0,dpr,0,0); x.clearRect(0,0,W,H);
+  const pts = []; for(let i=0;i<t.length;i++) if(avg[i]!=null) pts.push(i);
+  if(!pts.length) return;
+  const L = o.spark?1:44, R = o.spark?1:8, T = o.spark?2:6, B = o.spark?2:20;
+  let lo=Infinity, hi=-Infinity;
+  pts.forEach(i=>{ lo=Math.min(lo, mn&&mn[i]!=null?mn[i]:avg[i]); hi=Math.max(hi, mx&&mx[i]!=null?mx[i]:avg[i]); });
+  if(hi-lo < 1e-6){ hi+=1; lo-=1; }
+  const padY=(hi-lo)*0.08; lo-=padY; hi+=padY;
+  const t0 = o.span ? Math.floor(Date.now()/1000)-o.span : t[pts[0]], t1 = o.span ? Math.floor(Date.now()/1000) : t[pts[pts.length-1]];
+  const tspan = Math.max(1, t1-t0);
+  const X = ts => L + (ts-t0)/tspan*(W-L-R), Y = v => T + (1-(v-lo)/(hi-lo))*(H-T-B);
+  const gap = (o.bucket||1)*2.5;
+  const acc = css("--acc"), mut = css("--mut"), edge = css("--edge");
+  if(!o.spark){                                   // grid + y labels + x labels
+    x.font = "11px system-ui,sans-serif"; x.fillStyle = mut; x.strokeStyle = edge; x.lineWidth = 1;
+    for(let g=0; g<=3; g++){ const v = lo+(hi-lo)*g/3, yy = Y(v);
+      x.beginPath(); x.moveTo(L,yy); x.lineTo(W-R,yy); x.stroke();
+      x.fillText(Math.abs(hi-lo)<20 ? v.toFixed(1) : Math.round(v), 2, yy+4); }
+    const n = Math.max(2, Math.floor((W-L-R)/90));
+    for(let g=0; g<=n; g++){ const ts = t0+tspan*g/n, xx = X(ts), s = fmtT(ts, tspan);
+      x.fillText(s, Math.min(Math.max(xx-x.measureText(s).width/2, L), W-R-x.measureText(s).width), H-5); }
+  }
+  // split into contiguous runs (break the line across gaps in the data)
+  const runs = []; let run = [];
+  pts.forEach((i,j)=>{ if(j && t[i]-t[pts[j-1]] > gap){ runs.push(run); run=[]; } run.push(i); });
+  runs.push(run);
+  if(mn && mx){
+    x.fillStyle = css("--band");
+    runs.forEach(rn=>{ if(rn.length<2) return; x.beginPath();
+      rn.forEach((i,j)=>{ const yy=Y(mx[i]!=null?mx[i]:avg[i]); j?x.lineTo(X(t[i]),yy):x.moveTo(X(t[i]),yy); });
+      for(let j=rn.length-1;j>=0;j--){ const i=rn[j]; x.lineTo(X(t[i]),Y(mn[i]!=null?mn[i]:avg[i])); }
+      x.closePath(); x.fill(); });
+  }
+  x.strokeStyle = acc; x.lineWidth = o.spark?1.2:1.7; x.lineJoin = "round";
+  runs.forEach(rn=>{ x.beginPath(); rn.forEach((i,j)=>{ j?x.lineTo(X(t[i]),Y(avg[i])):x.moveTo(X(t[i]),Y(avg[i])); });
+    if(rn.length===1){ x.arc(X(t[rn[0]]),Y(avg[rn[0]]),1.5,0,7); } x.stroke(); });
+  if(o.hi!=null && o.hi>=0 && avg[o.hi]!=null){
+    const xx=X(t[o.hi]); x.strokeStyle=mut; x.lineWidth=1; x.setLineDash([3,3]);
+    x.beginPath(); x.moveTo(xx,T); x.lineTo(xx,H-B); x.stroke(); x.setLineDash([]);
+    x.fillStyle=acc; x.beginPath(); x.arc(xx,Y(avg[o.hi]),3.5,0,7); x.fill();
+  }
+  cv._idx = px => { let best=-1, bd=1e9; pts.forEach(i=>{ const dd=Math.abs(X(t[i])-px); if(dd<bd){bd=dd;best=i;} }); return bd<40?best:-1; };
+}
+
+// ---- boot -----------------------------------------------------------------
+function tick(){ const d=new Date(); $("#clock").textContent = pad(d.getHours())+":"+pad(d.getMinutes())+":"+pad(d.getSeconds()); }
+$("#exportAll").onclick = e=>{ e.preventDefault(); const now=Math.floor(Date.now()/1000); location.href="/api/export.csv?from="+(now-86400)+"&to="+now; };
+window.addEventListener("resize", ()=>render());
+tick(); setInterval(tick, 1000);
+route();
+poll().then(refreshSparks);
+setInterval(poll, 5000);
+setInterval(refreshSparks, 10000);
+setInterval(()=>{ if(view.mac && Date.now()/1000 - view.histAt > (view.range<=21600?10:60)) loadHistory(); }, 5000);
+</script>
+</body>
+</html>

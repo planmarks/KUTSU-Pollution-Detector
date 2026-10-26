@@ -1,0 +1,30 @@
+# ===========================================================================
+# Kutsu Sense firmware — .gitignore
+# ===========================================================================
+
+# Arduino / PlatformIO build output
+build/
+.build/
+.pio/
+*.bin
+*.elf
+*.hex
+*.map
+*.o
+*.a
+*.d
+
+# Arduino IDE / sketch cache
+*.tmp
+.theia/
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+
+# Local secrets override (keep real Wi-Fi creds out of the repo).
+# Set credentials at runtime over serial (`ssid`/`pass`/`connect`) or in a local,
+# untracked copy — never commit real values into config.h.
+secrets.h

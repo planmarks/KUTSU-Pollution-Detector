@@ -68,6 +68,15 @@
 #include <NimBLEDevice.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/semphr.h>
+#include <esp_system.h>
+
+// On the XIAO ESP32-C3, D6 = GPIO21 (U0TXD) and D7 = GPIO20 (U0RXD). With
+// "USB CDC On Boot" disabled, Serial and the panic/backtrace console run on
+// UART0 = the two button pins, so logs vanish and the D6 button fights the TX
+// line. Serial must go over the native USB instead.
+#if !defined(ARDUINO_USB_CDC_ON_BOOT) || (ARDUINO_USB_CDC_ON_BOOT == 0)
+#error "Set Tools -> USB CDC On Boot -> Enabled (XIAO C3: D6/D7 are UART0 TX/RX)"
+#endif
 
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
@@ -624,8 +633,27 @@ void handleButtons() {
   btnPrev = b1;
 }
 
+const char* resetReasonStr(esp_reset_reason_t r) {
+  switch (r) {
+    case ESP_RST_POWERON:   return "power-on";
+    case ESP_RST_SW:        return "software restart";
+    case ESP_RST_PANIC:     return "PANIC (exception)";
+    case ESP_RST_INT_WDT:   return "INTERRUPT WATCHDOG";
+    case ESP_RST_TASK_WDT:  return "TASK WATCHDOG";
+    case ESP_RST_WDT:       return "other watchdog";
+    case ESP_RST_BROWNOUT:  return "BROWNOUT (supply dip)";
+    case ESP_RST_DEEPSLEEP: return "deep-sleep wake";
+    case ESP_RST_EXT:       return "external pin";
+    case ESP_RST_USB:       return "USB";
+    default:                return "unknown";
+  }
+}
+
 void setup() {
   Serial.begin(115200);
+  delay(1500);                     // give USB CDC time to enumerate so early logs aren't lost
+  esp_reset_reason_t rr = esp_reset_reason();
+  Serial.printf("[main] boot, last reset: %s (%d)\n", resetReasonStr(rr), (int)rr);
   pinMode(PIN_BUTTON, INPUT_PULLUP);
   pinMode(PIN_BUZZER, OUTPUT); digitalWrite(PIN_BUZZER, LOW);
 
@@ -680,8 +708,12 @@ void setup() {
   NimBLEScan* pScan = NimBLEDevice::getScan();
   pScan->setScanCallbacks(&scanCb);          // advertisements -> bleUpsert()
   pScan->setActiveScan(true);                // active scan -> request device names
-  pScan->setInterval(100);
-  pScan->setWindow(99);
+  // The C3 has ONE 2.4 GHz radio shared by Wi-Fi and BLE (time-sliced coexistence).
+  // A ~100% BLE scan duty (window 99 / interval 100) starves the async Wi-Fi scans
+  // and has caused interrupt-watchdog resets (rst:0x8 TG1WDT_SYS_RST). 50% leaves
+  // the radio free half the time; devices still refresh well within BLE_STALE_MS.
+  pScan->setInterval(BLE_SCAN_INTERVAL_MS);
+  pScan->setWindow(BLE_SCAN_WINDOW_MS);
   pScan->setDuplicateFilter(false);          // keep seeing repeats to refresh RSSI/last-seen
   pScan->start(0 /*continuous*/, false);     // runs in the background, fills bleTab
   bootLine("BLE", "OK");

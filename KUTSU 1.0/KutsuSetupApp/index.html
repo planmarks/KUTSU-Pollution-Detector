@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kutsu Setup</title>
+<!--
+  KUTSU Setup — local provisioning app for Kutsu Sense devices.
+  ---------------------------------------------------------------------------
+  Connects to a flashed Kutsu over Bluetooth LE (Web Bluetooth) OR USB
+  (Web Serial) and sets up WiFi, a room label, and the clock — a friendly
+  replacement for sending raw bytes in nRF Connect.
+
+  HOW TO RUN: open this file in desktop Google Chrome or Microsoft Edge
+  (version 89+). Web Bluetooth / Web Serial are not available in Firefox or
+  Safari. No install, no server, no internet needed — everything is local.
+
+  The BLE GATT contract and the USB serial console it speaks to are documented
+  in ../PROVISIONING.md. This is a single self-contained file by design; it is
+  the seed for a future Tauri/Electron desktop build and more features.
+-->
+<style>
+  :root{
+    --bg:#f4f6f5; --panel:#ffffff; --ink:#15211c; --muted:#5d6b64;
+    --line:#dde4e0; --brand:#4a7c59; --brand-ink:#2f5b3e;
+    --accent:#8fb89a; --good:#2e9e5b; --warn:#d7a21a; --bad:#d1495b;
+    --chip:#eef2f0; --shadow:0 1px 2px rgba(0,0,0,.05),0 8px 24px rgba(20,33,28,.06);
+    --radius:14px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#10150f; --panel:#18211a; --ink:#e7efe9; --muted:#9db0a4;
+      --line:#2a362d; --brand:#8fb89a; --brand-ink:#b7d6bf;
+      --accent:#4a7c59; --chip:#1f2a22; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;padding:0 16px}
+  .wrap{max-width:720px;margin:0 auto;padding:28px 0 64px}
+  header{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .logo{width:40px;height:40px;border-radius:11px;background:var(--brand);
+    display:grid;place-items:center;color:#fff;flex:none;box-shadow:var(--shadow)}
+  .logo svg{width:22px;height:22px}
+  h1{font-size:20px;margin:0;letter-spacing:.2px}
+  .sub{color:var(--muted);font-size:13px;margin:2px 0 0}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px;margin-top:16px;box-shadow:var(--shadow)}
+  .card h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;
+    color:var(--muted);margin:0 0 14px;font-weight:600}
+  .row{display:flex;gap:10px;flex-wrap:wrap}
+  button{font:inherit;font-weight:600;border:1px solid transparent;border-radius:10px;
+    padding:11px 16px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:8px}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  .btn-primary{background:var(--brand);color:#fff}
+  .btn-primary:hover:not(:disabled){filter:brightness(1.07)}
+  .btn-ghost{background:var(--chip);color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover:not(:disabled){border-color:var(--accent)}
+  .btn-danger{background:transparent;color:var(--bad);border-color:var(--line)}
+  .btn-danger:hover:not(:disabled){border-color:var(--bad)}
+  button svg{width:17px;height:17px}
+  label{display:block;font-size:13px;font-weight:600;margin:0 0 6px}
+  input{width:100%;font:inherit;padding:11px 12px;border:1px solid var(--line);
+    border-radius:10px;background:var(--bg);color:var(--ink)}
+  input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .field{margin-bottom:14px}
+  .pw{position:relative}
+  .pw button{position:absolute;right:5px;top:5px;padding:6px 9px;font-size:12px;
+    background:transparent;border:0;color:var(--muted)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:520px){.grid2{grid-template-columns:1fr}}
+  .status-line{display:flex;justify-content:space-between;gap:12px;padding:8px 0;
+    border-bottom:1px dashed var(--line);font-size:14px}
+  .status-line:last-child{border-bottom:0}
+  .status-line .k{color:var(--muted)}
+  .status-line .v{font-weight:600;text-align:right;word-break:break-word}
+  .badge{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:700}
+  .b-solo{background:var(--chip);color:var(--muted)}
+  .b-master{background:rgba(46,158,91,.15);color:var(--good)}
+  .b-slave{background:rgba(143,184,154,.2);color:var(--brand-ink)}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:7px;background:var(--muted)}
+  .dot.on{background:var(--good);box-shadow:0 0 0 3px rgba(46,158,91,.18)}
+  .pill{display:inline-flex;align-items:center;font-size:13px;color:var(--muted);
+    background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  a{color:var(--brand-ink);font-weight:600}
+  .readings{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  @media (max-width:520px){.readings{grid-template-columns:repeat(2,1fr)}}
+  .metric{background:var(--chip);border-radius:11px;padding:11px;text-align:center}
+  .metric .mv{font-size:19px;font-weight:700}
+  .metric .ml{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+  .metric.s1{box-shadow:inset 0 0 0 2px var(--warn)}
+  .metric.s2{box-shadow:inset 0 0 0 2px var(--bad)}
+  .setrow{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line)}
+  .setrow:last-of-type{border-bottom:0}
+  .setrow .label{font-weight:600}
+  .setrow .desc{font-size:12.5px;color:var(--muted);margin-top:1px}
+  .switch{position:relative;width:46px;height:26px;flex:none}
+  .switch input{opacity:0;width:0;height:0}
+  .slider{position:absolute;inset:0;background:var(--line);border-radius:999px;transition:.2s;cursor:pointer}
+  .slider::before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+  .switch input:checked + .slider{background:var(--brand)}
+  .switch input:checked + .slider::before{transform:translateX(20px)}
+  .switch input:disabled + .slider{opacity:.5;cursor:not-allowed}
+  .seg{display:inline-flex;background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:3px}
+  .seg button{background:transparent;border:0;padding:7px 14px;border-radius:8px;font-size:13px;color:var(--muted)}
+  .seg button.active{background:var(--brand);color:#fff}
+  select{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:var(--bg);color:var(--ink);max-width:150px}
+  select:focus{outline:2px solid var(--accent);outline-offset:1px}
+  .thr-row2{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+  .thr-row2:last-child{border-bottom:0}
+  .thr-row2 .tl{font-weight:600;font-size:14px}
+  .ins{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+  .thr-in{display:flex;flex-direction:column;align-items:center;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+  .thr-in input{width:70px;padding:6px 7px;text-align:right;margin-top:2px}
+  .note{font-size:13px;color:var(--muted);margin:10px 0 0}
+  .warnbar{background:rgba(215,162,26,.12);border:1px solid rgba(215,162,26,.4);
+    color:#8a6a10;border-radius:10px;padding:11px 13px;font-size:13.5px;margin-top:16px}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .warnbar{color:#e7c86a}}
+  details.log{margin-top:16px}
+  details.log summary{cursor:pointer;color:var(--muted);font-size:13px;font-weight:600}
+  pre#log{background:#0d120f;color:#b7d6bf;border-radius:10px;padding:12px;margin-top:10px;
+    font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;max-height:220px;overflow:auto;white-space:pre-wrap}
+  .hide{display:none!important}
+  footer{color:var(--muted);font-size:12px;text-align:center;margin-top:28px}
+  .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);
+    background:var(--ink);color:var(--bg);padding:11px 18px;border-radius:999px;
+    font-size:14px;font-weight:600;box-shadow:var(--shadow);opacity:0;transition:.25s;pointer-events:none}
+  .toast.show{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3c0 4-4 5-4 9a4 4 0 0 0 8 0c0-4-4-5-4-9z"/><circle cx="12" cy="13" r="1.3" fill="currentColor" stroke="none"/>
+      </svg>
+    </div>
+    <div>
+      <h1>Kutsu Setup</h1>
+      <p class="sub">Connect a Kutsu Sense device and get it on your network.</p>
+    </div>
+  </header>
+
+  <!-- Unsupported-browser notice -->
+  <div id="unsupported" class="warnbar hide">
+    This browser can’t talk to hardware. Open <b>Kutsu Setup</b> in desktop
+    <b>Google Chrome</b> or <b>Microsoft Edge</b> (v89+). Web Bluetooth / Web Serial
+    aren’t available in Firefox or Safari.
+  </div>
+
+  <!-- Connect -->
+  <div class="card" id="connectCard">
+    <h2>Connect your device</h2>
+    <div class="row">
+      <button class="btn-primary" id="btnBle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7l10 10-5 4V3l5 4L7 17"/></svg>
+        Connect over Bluetooth
+      </button>
+      <button class="btn-ghost" id="btnSerial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 11v2M10 11v2M14 11v2M18 11v2"/></svg>
+        Connect via USB
+      </button>
+    </div>
+    <p class="note" id="connectHint">Power the device on and keep it nearby. Bluetooth is wireless;
+      USB needs the cable (and works even before WiFi exists).</p>
+    <p class="note" style="margin-top:12px;padding-top:12px;border-top:1px solid var(--line)">
+      Need to flash or update firmware? <a id="flasherLink" href="#" target="_blank" rel="noopener">Open Kutsu Flasher ↗</a>
+      — installs the latest firmware over USB in your browser.
+    </p>
+  </div>
+
+  <!-- Live session -->
+  <div id="session" class="hide">
+    <div class="card">
+      <h2>Device</h2>
+      <div class="row" style="justify-content:space-between;align-items:center;margin-bottom:6px">
+        <span class="pill"><span class="dot on" id="connDot"></span><span id="connVia">Connected</span></span>
+        <button class="btn-ghost" id="btnDisconnect" style="padding:7px 12px;font-size:13px">Disconnect</button>
+      </div>
+      <div id="statusList"></div>
+    </div>
+
+    <div class="card">
+      <h2>WiFi setup</h2>
+      <div class="field">
+        <label for="ssid">Network name (SSID)</label>
+        <input id="ssid" autocomplete="off" placeholder="e.g. Workshop-2G">
+      </div>
+      <div class="field">
+        <label for="pw">Password</label>
+        <div class="pw">
+          <input id="pw" type="password" autocomplete="off" placeholder="Network password">
+          <button type="button" id="pwToggle">Show</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="room">Room / location label <span style="color:var(--muted);font-weight:400">(optional)</span></label>
+        <input id="room" autocomplete="off" placeholder="e.g. Kitchen">
+      </div>
+      <div class="row">
+        <button class="btn-primary" id="btnSave">Save &amp; connect</button>
+        <button class="btn-danger" id="btnForget">Forget WiFi</button>
+      </div>
+      <p class="note" id="wifiNote">2.4 GHz networks are the safe choice — every Kutsu module has 2.4 GHz;
+        only the C5 also joins 5 GHz.</p>
+    </div>
+
+    <div class="card" id="settingsCard">
+      <h2>Device settings</h2>
+      <div class="field">
+        <label for="devname">Device name</label>
+        <div class="pw">
+          <input id="devname" autocomplete="off" placeholder="e.g. Otter-C3">
+          <button type="button" id="nameSave">Save</button>
+        </div>
+        <p class="note" id="nameNote" style="margin:6px 0 0">A creature name is assigned at the factory. Clear the field and Save to restore it.</p>
+      </div>
+      <div class="setrow">
+        <div><div class="label">Mode</div><div class="desc">Stationary joins WiFi and feeds the KUTSU Hub; handheld stays off WiFi.</div></div>
+        <div class="seg" id="segMode">
+          <button data-mode="handheld" class="active">Handheld</button>
+          <button data-mode="stationary">Stationary</button>
+        </div>
+      </div>
+      <div class="setrow">
+        <div><div class="label">Buzzer</div><div class="desc">Audible alarm on dangerous readings.</div></div>
+        <label class="switch"><input type="checkbox" data-set="buzzer"><span class="slider"></span></label>
+      </div>
+      <div class="setrow">
+        <div><div class="label">Warning LED</div><div class="desc">Lights on warning / alert.</div></div>
+        <label class="switch"><input type="checkbox" data-set="led"><span class="slider"></span></label>
+      </div>
+      <div class="setrow">
+        <div><div class="label">Display</div><div class="desc">OLED screen (device keeps running when off).</div></div>
+        <label class="switch"><input type="checkbox" data-set="display"><span class="slider"></span></label>
+      </div>
+      <div class="setrow">
+        <div><div class="label">WiFi &amp; BLE scanning</div><div class="desc">Nearby networks/devices screens. Setup stays reachable either way.</div></div>
+        <label class="switch"><input type="checkbox" data-set="scan"><span class="slider"></span></label>
+      </div>
+      <div class="setrow">
+        <div><div class="label">Buzzer signal</div><div class="desc">Plays a preview on the device when changed.</div></div>
+        <select id="selBzSig" data-sset="buzzer_sig">
+          <option value="0">Triple beep</option><option value="1">Single beep</option>
+          <option value="2">Long beep</option><option value="3">Rapid beeps</option><option value="4">SOS</option>
+        </select>
+      </div>
+      <div class="setrow">
+        <div><div class="label">LED — warning</div><div class="desc">How the LED behaves at warning level.</div></div>
+        <select id="selLedWarn" data-sset="led_warn">
+          <option value="0">Off</option><option value="1">Blink slow</option><option value="2">Blink fast</option><option value="3">Stay lit</option><option value="4">SOS</option>
+        </select>
+      </div>
+      <div class="setrow">
+        <div><div class="label">LED — alert</div><div class="desc">How the LED behaves at alert level.</div></div>
+        <select id="selLedAlert" data-sset="led_alert">
+          <option value="0">Off</option><option value="1">Blink slow</option><option value="2">Blink fast</option><option value="3">Stay lit</option><option value="4">SOS</option>
+        </select>
+      </div>
+      <p class="note" id="setNote">Changes save to the device immediately.</p>
+    </div>
+
+    <div class="card" id="thrCard">
+      <h2>Warning thresholds</h2>
+      <div id="thrRows"></div>
+      <div class="row" style="margin-top:12px">
+        <button class="btn-ghost" id="thrReset" style="padding:8px 13px;font-size:13px">Restore defaults</button>
+      </div>
+      <p class="note">Warn = the “!” level; Alert = full alarm. Blank fields are left unchanged.</p>
+    </div>
+
+    <div class="card" id="readingsCard">
+      <h2>Live readings</h2>
+      <div class="readings" id="readings">
+        <div class="metric"><div class="mv" data-m="co2">–</div><div class="ml">CO₂ ppm</div></div>
+        <div class="metric"><div class="mv" data-m="voc">–</div><div class="ml">VOC idx</div></div>
+        <div class="metric"><div class="mv" data-m="nox">–</div><div class="ml">NOx idx</div></div>
+        <div class="metric"><div class="mv" data-m="temp">–</div><div class="ml">Temp °C</div></div>
+        <div class="metric"><div class="mv" data-m="hum">–</div><div class="ml">Hum %</div></div>
+      </div>
+      <p class="note">Updates live while connected. Readings stream over Bluetooth, or from the device log over USB.</p>
+    </div>
+  </div>
+
+  <details class="log">
+    <summary>Activity log</summary>
+    <pre id="log"></pre>
+  </details>
+
+  <footer>Kutsu Setup · local provisioning · by Papathought · runs entirely on your computer</footer>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+/* ===========================================================================
+ * Kutsu Setup — transport-agnostic provisioning
+ * ---------------------------------------------------------------------------
+ * Two transports implement the same small interface:
+ *   connect(), disconnect(), provision({ssid,password,room}), forget(),
+ *   refreshStatus(), onStatus(cb), onReading(cb), onLog(cb), onClose(cb)
+ * so the UI never cares whether it's BLE or USB. Add features (calibration,
+ * firmware info, ...) by extending both transports + the UI.
+ * ======================================================================== */
+
+// ---- Kutsu BLE GATT contract (must match firmware config.h / PROVISIONING.md)
+const SVC       = "6b755473-7500-4b75-7473-750000000001";
+const CHR_LIVE  = "6b755473-7500-4b75-7473-750000000002";
+const CHR_TIME  = "6b755473-7500-4b75-7473-750000000003";
+const CHR_WIFI  = "6b755473-7500-4b75-7473-750000000004";
+const CHR_STATUS= "6b755473-7500-4b75-7473-750000000005";
+const CHR_SETTINGS = "6b755473-7500-4b75-7473-750000000007";
+const CHR_THRESH   = "6b755473-7500-4b75-7473-750000000008";
+
+// Where the Kutsu Flasher (web USB flasher) is hosted. Set this to your GitHub
+// Pages URL once deployed, e.g. "https://OWNER.github.io/REPO/KutsuFlasher/".
+const FLASHER_URL = "https://OWNER.github.io/REPO/KutsuFlasher/";
+
+const $ = s => document.querySelector(s);
+const enc = new TextEncoder(), dec = new TextDecoder();
+const log = (m)=>{ const el=$("#log"); const t=new Date().toLocaleTimeString();
+  el.textContent += `[${t}] ${m}\n`; el.scrollTop=el.scrollHeight; };
+const toast = (m)=>{ const t=$("#toast"); t.textContent=m; t.classList.add("show");
+  clearTimeout(toast._t); toast._t=setTimeout(()=>t.classList.remove("show"),2200); };
+// Best-effort geolocation from this computer (prompts once; resolves null if denied/unavailable).
+const getGeo = (timeoutMs=5000)=> new Promise(res=>{
+  if(!navigator.geolocation) return res(null);
+  navigator.geolocation.getCurrentPosition(
+    p=>res({lat:+p.coords.latitude.toFixed(6), lon:+p.coords.longitude.toFixed(6)}),
+    ()=>res(null), {timeout:timeoutMs, maximumAge:60000});
+});
+
+/* ---------------------------------------------------------- BLE transport */
+class BleTransport{
+  constructor(){ this.kind="Bluetooth"; this.cbs={}; this._q=Promise.resolve(); }
+  on(k,f){ this.cbs[k]=f; } emit(k,...a){ this.cbs[k]&&this.cbs[k](...a); }
+  // Web Bluetooth allows ONE GATT read/write in flight at a time (else it throws
+  // "GATT operation already in progress"). Serialize every op through this queue.
+  _op(fn){ const run = this._q.catch(()=>{}).then(()=>fn()); this._q = run.catch(()=>{}); return run; }
+
+  async connect(){
+    this.device = await navigator.bluetooth.requestDevice({
+      filters:[{services:[SVC]},{namePrefix:"Kutsu"}],
+      optionalServices:[SVC,"device_information"]
+    });
+    this.device.addEventListener("gattserverdisconnected",()=>this.emit("close"));
+    const gatt = await this.device.gatt.connect();
+    const svc  = await gatt.getPrimaryService(SVC);
+    this.cWifi   = await svc.getCharacteristic(CHR_WIFI);
+    this.cStatus = await svc.getCharacteristic(CHR_STATUS);
+    try{ this.cTime = await svc.getCharacteristic(CHR_TIME); }catch(e){ this.cTime=null; }
+    try{ this.cLive = await svc.getCharacteristic(CHR_LIVE); }catch(e){ this.cLive=null; }
+    try{ this.cSet  = await svc.getCharacteristic(CHR_SETTINGS); }catch(e){ this.cSet=null; }
+    try{ this.cThr  = await svc.getCharacteristic(CHR_THRESH); }catch(e){ this.cThr=null; }
+
+    await this.cStatus.startNotifications();
+    this.cStatus.addEventListener("characteristicvaluechanged",
+      e=>this._status(dec.decode(e.target.value)));
+    if(this.cSet){
+      await this.cSet.startNotifications();
+      this.cSet.addEventListener("characteristicvaluechanged",
+        e=>this._settings(dec.decode(e.target.value)));
+    }
+    if(this.cLive){
+      await this.cLive.startNotifications();
+      this.cLive.addEventListener("characteristicvaluechanged",
+        e=>this._reading(dec.decode(e.target.value)));
+    }
+    log(`BLE connected to ${this.device.name||"device"}`);
+    await this.refreshStatus();
+    await this.refreshSettings();
+    await this.refreshThresholds();
+    await this.contributeTimeGeo();
+  }
+  async disconnect(){ try{ this.device?.gatt?.disconnect(); }catch(e){} }
+  async refreshSettings(){ if(!this.cSet) return;
+    try{ const v=await this._op(()=>this.cSet.readValue()); this._settings(dec.decode(v)); }catch(e){} }
+  async applySettings(obj){ if(!this.cSet){ log("device has no settings characteristic"); return; }
+    await this._op(()=>this.cSet.writeValue(enc.encode(JSON.stringify(obj)))); log("BLE settings "+JSON.stringify(obj)); }
+  async refreshThresholds(){ if(!this.cThr) return;
+    try{ const v=await this._op(()=>this.cThr.readValue()); this.emit("thresholds", JSON.parse(dec.decode(v))); }catch(e){} }
+  async applyThresholds(patch){ if(!this.cThr){ log("device has no thresholds characteristic"); return; }
+    await this._op(()=>this.cThr.writeValue(enc.encode(JSON.stringify(patch)))); log("BLE thresholds "+JSON.stringify(patch)); }
+  _settings(s){ try{ this.emit("settings", JSON.parse(s)); }catch(e){} }
+  async provision({ssid,password,room}){
+    const payload = JSON.stringify({ssid,password,room:room||""});
+    await this._op(()=>this.cWifi.writeValue(enc.encode(payload)));
+    log(`BLE wrote WiFi: ssid="${ssid}" room="${room||""}"`);
+  }
+  async forget(){ await this._op(()=>this.cWifi.writeValue(enc.encode(JSON.stringify({ssid:""})))); log("BLE forget sent"); }
+  async refreshStatus(){ try{ const v=await this._op(()=>this.cStatus.readValue()); this._status(dec.decode(v)); }catch(e){ log("status read failed: "+e.message); } }
+  async contributeTimeGeo(){ if(!this.cTime) return;
+    const payload = { epoch: Math.floor(Date.now()/1000) };
+    const g = await getGeo(); if(g){ payload.lat = g.lat; payload.lon = g.lon; }
+    try{ await this._op(()=>this.cTime.writeValue(enc.encode(JSON.stringify(payload))));
+      log("Sent time"+(g?" + location":"")+" from this computer"); }catch(e){} }
+  _status(s){ try{ this.emit("status", JSON.parse(s)); }catch(e){ log("bad status json: "+s); } }
+  _reading(s){ try{ this.emit("reading", JSON.parse(s)); }catch(e){} }
+}
+
+/* --------------------------------------------------------- Serial transport
+ * Talks to the firmware's USB console: ssid/pass/room/connect/forget/status.
+ * The device prints "[status] {json}" (parsed here) and raw JSON record lines. */
+class SerialTransport{
+  constructor(){ this.kind="USB"; this.cbs={}; this.buf=""; }
+  on(k,f){ this.cbs[k]=f; } emit(k,...a){ this.cbs[k]&&this.cbs[k](...a); }
+
+  async connect(){
+    this.port = await navigator.serial.requestPort();
+    await this.port.open({baudRate:115200});
+    this.writer = this.port.writable.getWriter();
+    this._read();                              // background line reader
+    log("USB serial open @115200");
+    await this.refreshStatus();
+    await this.refreshSettings();
+    await this.refreshThresholds();
+    await this.contributeTimeGeo();
+  }
+  async contributeTimeGeo(){
+    await this._send("time "+Math.floor(Date.now()/1000));
+    const g = await getGeo(); if(g){ await this._send("geo "+g.lat+" "+g.lon); }
+    log("Sent time"+(g?" + location":"")+" from this computer");
+  }
+  async _read(){
+    const reader = this.port.readable.getReader();
+    this.reader = reader;
+    try{
+      for(;;){
+        const {value,done} = await reader.read();
+        if(done) break;
+        this.buf += dec.decode(value,{stream:true});
+        let i;
+        while((i=this.buf.indexOf("\n"))>=0){
+          const line=this.buf.slice(0,i).replace(/\r$/,""); this.buf=this.buf.slice(i+1);
+          this._line(line);
+        }
+      }
+    }catch(e){ /* closed */ }
+    finally{ reader.releaseLock(); this.emit("close"); }
+  }
+  _line(line){
+    if(!line) return;
+    const m = line.match(/\[status\]\s*(\{.*\})\s*$/);
+    if(m){ try{ this.emit("status", JSON.parse(m[1])); }catch(e){} return; }
+    const ms = line.match(/\[settings\]\s*(\{.*\})\s*$/);
+    if(ms){ try{ this.emit("settings", JSON.parse(ms[1])); }catch(e){} return; }
+    const mt = line.match(/\[thresholds\]\s*(\{.*\})\s*$/);
+    if(mt){ try{ this.emit("thresholds", JSON.parse(mt[1])); }catch(e){} return; }
+    const t = line.trim();
+    if(t.startsWith("{") && t.endsWith("}")){           // a JSON log record
+      try{ const r=JSON.parse(t); if("co2" in r||"temp" in r||"hum" in r) this.emit("reading",r); }catch(e){}
+      return;
+    }
+    if(/^\[/.test(t)) log("dev "+t);                    // surface [con]/[ble]/[main] lines
+  }
+  async _send(s){ await this.writer.write(enc.encode(s+"\n")); }
+  async disconnect(){
+    try{ await this.reader?.cancel(); }catch(e){}
+    try{ this.writer?.releaseLock(); }catch(e){}
+    try{ await this.port?.close(); }catch(e){}
+  }
+  async provision({ssid,password,room}){
+    await this._send("ssid "+ssid);
+    if(password) await this._send("pass "+password);
+    if(room) await this._send("room "+room);
+    await this._send("connect");
+    log(`USB sent: ssid/pass/${room?"room/":""}connect`);
+    setTimeout(()=>this.refreshStatus(),800);
+  }
+  async forget(){ await this._send("forget"); setTimeout(()=>this.refreshStatus(),400); }
+  async refreshStatus(){ await this._send("status"); }
+  async refreshSettings(){ await this._send("settings"); }
+  async applySettings(obj){
+    for(const [k,v] of Object.entries(obj)){
+      if(k==="mode") await this._send("mode "+v);
+      else if(k==="name") await this._send("name "+v);
+      else if(k==="buzzer_sig") await this._send("buzzer "+v);
+      else if(k==="led_warn")  await this._send("led warn "+v);
+      else if(k==="led_alert") await this._send("led alert "+v);
+      else await this._send(`set ${k} ${v?"on":"off"}`);
+    }
+    // the device echoes "[settings] {..}" after each command; no extra refresh needed
+  }
+  async refreshThresholds(){ await this._send("thresholds"); }
+  async applyThresholds(patch){
+    for(const [m,o] of Object.entries(patch)){
+      if(m==="reset"){ /* serial has no reset; skip */ continue; }
+      if("w" in o && "h" in o) await this._send(`threshold ${m} ${o.w} ${o.h}`);  // temp/hum need BLE
+    }
+  }
+}
+
+/* ------------------------------------------------------------------- UI */
+let T = null, pollTimer = null;
+
+function supportCheck(){
+  const ble = !!navigator.bluetooth, ser = !!navigator.serial;
+  if(!ble && !ser){ $("#unsupported").classList.remove("hide"); }
+  $("#btnBle").disabled = !ble;
+  $("#btnSerial").disabled = !ser;
+  if(!ble) $("#btnBle").title="Web Bluetooth not available in this browser";
+  if(!ser) $("#btnSerial").title="Web Serial not available in this browser";
+}
+
+function wire(transport){
+  T = transport;
+  T.on("status", renderStatus);
+  T.on("reading", renderReading);
+  T.on("settings", renderSettings);
+  T.on("thresholds", renderThresholds);
+  T.on("close", ()=>{ log("Device disconnected"); teardown(); toast("Device disconnected"); });
+}
+
+let _settingsReady = false;
+function renderSettings(s){
+  _settingsReady = false;                 // suppress change events while we set values
+  document.querySelectorAll('[data-set]').forEach(inp=>{
+    const k = inp.dataset.set; if(k in s) inp.checked = !!(s[k]===1||s[k]===true);
+  });
+  document.querySelectorAll('[data-sset]').forEach(sel=>{       // buzzer_sig / led_warn / led_alert
+    const k = sel.dataset.sset; if(k in s) sel.value = String(s[k]);
+  });
+  const ni=$("#devname"); if(document.activeElement!==ni && typeof s.name==="string") ni.value = s.name;
+  const mode = (s.mode||"handheld").toLowerCase();
+  document.querySelectorAll('#segMode button').forEach(b=>b.classList.toggle('active', b.dataset.mode===mode));
+  _settingsReady = true;
+}
+async function onSettingChange(obj){
+  if(!T) return;
+  try{ await T.applySettings(obj); toast("Setting saved"); }
+  catch(e){ log("Setting failed: "+e.message); toast("Couldn’t save"); }
+}
+document.querySelectorAll('[data-set]').forEach(inp=>{
+  inp.addEventListener('change', ()=>{ if(_settingsReady) onSettingChange({[inp.dataset.set]: inp.checked}); });
+});
+document.querySelectorAll('[data-sset]').forEach(sel=>{
+  sel.addEventListener('change', ()=>{ if(_settingsReady) onSettingChange({[sel.dataset.sset]: +sel.value}); });
+});
+document.querySelectorAll('#segMode button').forEach(b=>{
+  b.addEventListener('click', ()=>{ if(!_settingsReady) return;
+    document.querySelectorAll('#segMode button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active'); onSettingChange({mode:b.dataset.mode}); });
+});
+// Device name
+function saveName(){ if(_settingsReady) onSettingChange({name: $("#devname").value.trim()}); }
+$("#nameSave").onclick = saveName;
+$("#devname").addEventListener('keydown', e=>{ if(e.key==="Enter") saveName(); });
+
+// ---- Warning thresholds ----
+const THR_FIELDS = {
+  co2:[["w","warn"],["h","alert"]], eco2:[["w","warn"],["h","alert"]], tvoc:[["w","warn"],["h","alert"]],
+  voc:[["w","warn"],["h","alert"]], nox:[["w","warn"],["h","alert"]], gas:[["w","warn"],["h","alert"]],
+  temp:[["wh","warn >"],["hh","alert >"],["hl","alert <"]],
+  hum:[["wl","warn <"],["wh","warn >"],["hl","alert <"],["hh","alert >"]],
+};
+const THR_LABEL = {co2:"CO₂ ppm",eco2:"eCO₂ ppm",tvoc:"TVOC ppb",voc:"VOC idx",nox:"NOx idx",gas:"Gas adc",temp:"Temp °C",hum:"Hum %RH"};
+let _thrReady = false;
+function renderThresholds(t){
+  _thrReady = false;
+  const host = $("#thrRows"); host.innerHTML = "";
+  for(const m of Object.keys(THR_FIELDS)){
+    if(!t[m]) continue;
+    const row = document.createElement("div"); row.className = "thr-row2";
+    let ins = "";
+    for(const [k,cap] of THR_FIELDS[m]){
+      const v = t[m][k]; if(v===undefined) continue;
+      ins += `<label class="thr-in"><span>${cap}</span><input type="number" step="any" data-m="${m}" data-k="${k}" value="${v}"></label>`;
+    }
+    row.innerHTML = `<span class="tl">${THR_LABEL[m]||m}</span><span class="ins">${ins}</span>`;
+    host.appendChild(row);
+  }
+  host.querySelectorAll('input[data-m]').forEach(inp=>{
+    inp.addEventListener('change', ()=>{ if(!_thrReady) return;
+      const val = inp.value.trim(); if(val==="") return;
+      onThrChange({[inp.dataset.m]: {[inp.dataset.k]: Number(val)}}); });
+  });
+  _thrReady = true;
+}
+async function onThrChange(patch){
+  if(!T) return;
+  try{ await T.applyThresholds(patch); toast("Threshold saved"); }
+  catch(e){ log("Threshold failed: "+e.message); toast("Couldn’t save"); }
+}
+$("#thrReset").onclick = async ()=>{
+  if(!T) return;
+  try{ await T.applyThresholds({reset:true}); toast("Defaults restored"); setTimeout(()=>T.refreshThresholds&&T.refreshThresholds(),400); }
+  catch(e){ log("Reset failed: "+e.message); }
+};
+
+async function start(transport){
+  wire(transport);
+  try{
+    await T.connect();
+    $("#connectCard").classList.add("hide");
+    $("#session").classList.remove("hide");
+    $("#connVia").textContent = "Connected over "+T.kind;
+    toast("Connected over "+T.kind);
+    pollTimer = setInterval(()=>T.refreshStatus().catch(()=>{}), 4000); // watch WiFi come up
+  }catch(e){
+    log("Connect failed: "+e.message);
+    if(e.name!=="NotFoundError") toast("Couldn’t connect");  // NotFoundError = user cancelled picker
+    T=null;
+  }
+}
+
+function teardown(){
+  clearInterval(pollTimer);
+  $("#session").classList.add("hide");
+  $("#connectCard").classList.remove("hide");
+  T=null;
+}
+
+function renderStatus(s){
+  const role = (s.role||"solo").toLowerCase();
+  const online = !!(s.ip && s.ip.length>0);
+  const rows = [
+    ["Name", s.name||"—"],
+    ["Device ID", s.mac||"—"],
+    ["Role", `<span class="badge b-${role}">${role}</span>`],
+    ["WiFi", online
+       ? `connected · ${s.ip}`
+       : `<span style="color:var(--muted)">not connected yet</span>`],
+    ["Hub", s.hub
+       ? `<a href="http://${s.hub}/" target="_blank" rel="noopener">${s.hub} dashboard ↗</a>`
+       : `<span style="color:var(--muted)">${online ? "searching… (is KUTSU Hub running? mode must be stationary)" : "—"}</span>`],
+    ["Room", s.room ? s.room : "—"],
+    ["Clock", s.synced ? "synced" : "not set"],
+    ["Location", s.geo ? `${(+s.lat).toFixed(4)}, ${(+s.lon).toFixed(4)}` : "not set"],
+  ];
+  $("#statusList").innerHTML = rows.map(([k,v])=>
+    `<div class="status-line"><span class="k">${k}</span><span class="v">${v}</span></div>`).join("");
+  if(s.room && !$("#room").value) $("#room").value = s.room;
+  if(online && !window._wasOnline){
+    toast("Device is online 🎉"); log(`Online at ${s.ip}`);
+    clearInterval(pollTimer); pollTimer=null;     // got the IP; stop polling so the radio is free for the dashboard
+  }
+  window._wasOnline = online;
+}
+
+function renderReading(r){
+  const set=(m,val)=>{ const el=document.querySelector(`[data-m="${m}"]`); if(el) el.textContent = (val==null?"–":val); };
+  set("co2", r.co2); set("voc", r.voc); set("nox", r.nox);
+  set("temp", r.temp!=null?(+r.temp).toFixed(1):null); set("hum", r.hum!=null?Math.round(r.hum):null);
+  const sev=(m,s)=>{ const el=document.querySelector(`[data-m="${m}"]`)?.closest(".metric");
+    if(el){ el.classList.remove("s1","s2"); if(s===1)el.classList.add("s1"); if(s===2)el.classList.add("s2"); } };
+  sev("co2",r.s_co2); sev("voc",r.s_voc); sev("nox",r.s_nox); sev("temp",r.s_temp); sev("hum",r.s_hum);
+}
+
+async function doSave(){
+  const ssid=$("#ssid").value.trim();
+  if(!ssid){ toast("Enter a network name"); $("#ssid").focus(); return; }
+  const data={ssid, password:$("#pw").value, room:$("#room").value.trim()};
+  $("#btnSave").disabled=true;
+  try{ await T.provision(data); toast("Sent — joining network…"); }
+  catch(e){ log("Provision failed: "+e.message); toast("Send failed"); }
+  finally{ setTimeout(()=>$("#btnSave").disabled=false,1200); }
+}
+
+async function doForget(){
+  if(!T) return;
+  try{ await T.forget(); toast("WiFi credentials cleared"); window._wasOnline=false; }
+  catch(e){ log("Forget failed: "+e.message); }
+}
+
+// Events
+$("#btnBle").onclick    = ()=>start(new BleTransport());
+$("#btnSerial").onclick = ()=>start(new SerialTransport());
+$("#btnDisconnect").onclick = ()=>{ T?.disconnect(); teardown(); };
+$("#btnSave").onclick   = doSave;
+$("#btnForget").onclick = doForget;
+$("#pwToggle").onclick  = ()=>{ const i=$("#pw"); const show=i.type==="password";
+  i.type=show?"text":"password"; $("#pwToggle").textContent=show?"Hide":"Show"; };
+const _fl=$("#flasherLink"); if(_fl) _fl.href = FLASHER_URL;
+supportCheck();
+log("Kutsu Setup ready. Choose Bluetooth or USB to begin.");
+</script>
+</body>
+</html>

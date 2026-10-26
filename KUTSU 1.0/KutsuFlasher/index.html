@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kutsu Flasher</title>
+<!--
+  KUTSU Flasher — install / update Kutsu Sense firmware over USB from the browser.
+  ---------------------------------------------------------------------------
+  Uses ESP Web Tools (esptool-js under the hood) to full-flash the board over
+  Web Serial. Works in desktop Chrome / Edge.
+
+  DEPLOY ON HTTPS. Web Serial needs a secure context, and the flasher fetches
+  manifest.json + the firmware binaries cross-origin. Host this folder on GitHub
+  Pages (or any static HTTPS host); file:// will not reliably fetch the manifest.
+  Firmware binaries live on GitHub Releases — see manifest.json and README.md.
+-->
+<script type="module" src="https://cdn.jsdelivr.net/npm/esp-web-tools@10/dist/web/install-button.js?module"></script>
+<style>
+  :root{ --bg:#f4f6f5; --panel:#fff; --ink:#15211c; --muted:#5d6b64; --line:#dde4e0;
+    --brand:#4a7c59; --brand-ink:#2f5b3e; --chip:#eef2f0;
+    --shadow:0 1px 2px rgba(0,0,0,.05),0 8px 24px rgba(20,33,28,.06); }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){
+    --bg:#10150f; --panel:#18211a; --ink:#e7efe9; --muted:#9db0a4; --line:#2a362d;
+    --brand:#8fb89a; --brand-ink:#b7d6bf; --chip:#1f2a22;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35); } }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);padding:0 16px;
+    font:15px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:640px;margin:0 auto;padding:36px 0 64px}
+  header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+  .logo{width:40px;height:40px;border-radius:11px;background:var(--brand);display:grid;place-items:center;color:#fff;box-shadow:var(--shadow)}
+  .logo svg{width:22px;height:22px}
+  h1{font-size:20px;margin:0}
+  .sub{color:var(--muted);font-size:13px;margin:2px 0 0}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;margin-top:18px;box-shadow:var(--shadow)}
+  ol{margin:0;padding-left:20px} li{margin:6px 0}
+  esp-web-install-button{--esp-tools-button-color:#fff;--esp-tools-button-text-color:#fff}
+  esp-web-install-button[install-unsupported]{display:none}
+  .unsupported{display:none;background:rgba(215,162,26,.12);border:1px solid rgba(215,162,26,.4);border-radius:10px;padding:12px 14px;font-size:13.5px;margin-top:10px}
+  esp-web-install-button[install-unsupported] ~ .unsupported{display:block}
+  .cta{display:flex;justify-content:center;margin:18px 0 6px}
+  .note{font-size:13px;color:var(--muted)}
+  code{background:var(--chip);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:13px}
+  a{color:var(--brand-ink);font-weight:600}
+  footer{color:var(--muted);font-size:12px;text-align:center;margin-top:26px}
+  .warn{background:rgba(209,73,91,.1);border:1px solid rgba(209,73,91,.35);border-radius:10px;padding:12px 14px;font-size:13.5px;margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3c0 4-4 5-4 9a4 4 0 0 0 8 0c0-4-4-5-4-9z"/><circle cx="12" cy="13" r="1.3" fill="currentColor" stroke="none"/>
+      </svg>
+    </div>
+    <div>
+      <h1>Kutsu Flasher</h1>
+      <p class="sub">Install or update Kutsu Sense firmware over USB — right from your browser.</p>
+    </div>
+  </header>
+
+  <div class="card">
+    <ol>
+      <li>Use desktop <b>Chrome</b> or <b>Edge</b>.</li>
+      <li>Plug the Kutsu into USB-C (the board's native USB port).</li>
+      <li>Click <b>Install / Update</b>, pick the serial port, and wait — the board is detected automatically and the matching build is flashed.</li>
+    </ol>
+    <div class="cta">
+      <esp-web-install-button manifest="./manifest.json">
+        <button slot="activate" style="font:inherit;font-weight:700;background:var(--brand);color:#fff;border:0;border-radius:10px;padding:12px 22px;cursor:pointer">Install / Update firmware</button>
+      </esp-web-install-button>
+      <div class="unsupported">This browser can’t flash over USB. Open this page in desktop Chrome or Edge.</div>
+    </div>
+    <p class="note">Flashing rewrites the whole chip. Your Wi-Fi credentials, room label, device
+      name and settings live in a separate NVS area and are normally preserved across an update;
+      a full erase (offered by the installer) clears them.</p>
+  </div>
+
+  <div class="card">
+    <h3 style="margin:0 0 8px">Which build?</h3>
+    <p class="note" style="margin-top:0">One firmware serves every Kutsu module — <b>XIAO ESP32-C3 / C5 / C6 / S3</b>.
+      The flasher reads the connected chip and installs the right one from the manifest, so you don’t choose.</p>
+    <div class="warn" id="c5note">Note: <b>ESP32-C5</b> support depends on the esptool-js version behind
+      ESP Web Tools. If a C5 board isn’t recognised, flash it over USB from the Arduino IDE for now,
+      or pin a newer esptool-js — see the README.</div>
+  </div>
+
+  <footer>Kutsu Flasher · firmware over USB · by Papathought · pairs with the <b>Kutsu Setup</b> app for Wi-Fi &amp; settings</footer>
+</div>
+</body>
+</html>

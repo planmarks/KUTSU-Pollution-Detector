@@ -1,0 +1,20 @@
+# KUTSU Hub as a systemd service (Raspberry Pi OS / any Linux).
+# install_pi.sh fills in User= and the paths; to do it by hand:
+#   sudo cp kutsu-hub.service /etc/systemd/system/
+#   (edit User/WorkingDirectory/ExecStart to match where KutsuHub lives)
+#   sudo systemctl daemon-reload && sudo systemctl enable --now kutsu-hub
+#   journalctl -u kutsu-hub -f          # live log
+[Unit]
+Description=KUTSU Hub - KUTSU Sense collector + dashboard
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/KutsuHub
+ExecStart=/usr/bin/python3 /home/pi/KutsuHub/kutsu_hub.py --db /home/pi/KutsuHub/kutsu_hub.db
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

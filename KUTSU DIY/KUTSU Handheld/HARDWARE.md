@@ -41,7 +41,7 @@ is easy to hand-solder.
 | `Laser` | 2-pin header for a laser diode | — | Switched by SW3 |
 | `MQ2` | 4-pin header (AO · n/c · GND · 5V) | Analog | Routed but **not used** on the handheld (power budget) |
 | `FAN` | 2-pin header on the 5 V rail | — | Small fan |
-| U4 / U5 / U6 | SHT40 / SGP41 / SCD41 footprints | I²C | **Unpopulated** on the DIY build. Forward-compatible with the [KUTSU 1.0 firmware](../../KUTSU%201.0/KutsuFirmwareXIAOESP32C6/README.md) |
+| U4 / U5 / U6 | SHT40 / SGP41 / SCD41 footprints | I²C | **Unpopulated** on the DIY build. Forward-compatible with the [KUTSU 1.0 firmware](../../KUTSU%201.0/KutsuFirmwareXIAOESP32Series/README.md) |
 
 ### Controls
 

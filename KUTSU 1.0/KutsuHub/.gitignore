@@ -1,0 +1,5 @@
+# KUTSU Hub runtime data
+kutsu_hub.db
+kutsu_hub.db-wal
+kutsu_hub.db-shm
+__pycache__/

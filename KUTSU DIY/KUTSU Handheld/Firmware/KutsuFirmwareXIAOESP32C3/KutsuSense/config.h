@@ -51,6 +51,9 @@
 // ---- WiFi / BLE monitoring (passive scanners, run in the background) ----
 #define WIFI_SCAN_INTERVAL_MS  5000    // re-scan APs this often (async, background)
 #define BLE_STALE_MS           30000   // drop a BLE device not seen for this long
+#define BLE_SCAN_INTERVAL_MS   100     // BLE scan period ...
+#define BLE_SCAN_WINDOW_MS     50      // ... of which BLE listens this long (50% duty).
+                                       // Keep WINDOW well below INTERVAL: Wi-Fi shares the radio.
 #define BLE_TABLE_MAX          32      // max BLE devices tracked concurrently
 #define NET_SHOW               6       // AP rows shown on the Network screen (strongest first)
 #define BLE_SHOW               5       // device rows shown on the Nearby Devices screen
